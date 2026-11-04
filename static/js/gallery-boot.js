@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stub.disabled = true;
     stub.textContent = 'Loading…';
     try {
-      const {mountGallery} = await import('./gallery.js?v=8');
+      const {mountGallery} = await import('./gallery.js?v=9');
       stub.remove();
       await mountGallery(host);
     } catch (err) {

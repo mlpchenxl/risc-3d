@@ -105,7 +105,13 @@ export async function mountGallery(host) {
       } else {
         const v = el('video');
         Object.assign(v, {src: `static/videos/turntable/${item.id}.mp4`,
-                          muted: true, loop: true, autoplay: true, playsInline: true});
+                          muted: true, loop: true, autoplay: true, playsInline: true,
+                          disablePictureInPicture: true, disableRemotePlayback: true});
+        v.setAttribute('controlslist', 'nodownload noplaybackrate');
+        v.setAttribute('disablepictureinpicture', '');
+        v.setAttribute('disableremoteplayback', '');
+        v.setAttribute('oncontextmenu', 'return false;');
+        v.oncontextmenu = () => false;
         v.className = 'gal-video';
         stage.appendChild(v);
         view = {dispose: () => v.remove()};

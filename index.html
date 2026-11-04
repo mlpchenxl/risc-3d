@@ -37,7 +37,7 @@
        bulma-carousel / bulma-slider / jquery are vendored under static/ but not
        loaded — nothing on this page uses a carousel yet. -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/risc3d.js?v=4"></script>
+  <script defer src="static/js/risc3d.js?v=5"></script>
 
   <!-- Bare specifiers for the two viewer panels. Neither three.js, the MuJoCo
        engine nor the splat scene is fetched with the page: they start when the
@@ -50,9 +50,8 @@
       }
     }
   </script>
-  <script type="module" src="static/js/gallery-boot.js?v=8"></script>
+  <script type="module" src="static/js/gallery-boot.js?v=9"></script>
   <script type="module" src="static/js/splat-panel.js?v=3"></script>
-  <script type="module" src="static/js/cmp-panel.js?v=7"></script>
 </head>
 
 <body>
@@ -67,7 +66,6 @@
     <a href="#assets">Assets</a>
     <a href="#interact">Simulation</a>
     <a href="#results">Manipulation</a>
-    <a href="#ablation">Comparisons</a>
     <a href="#BibTeX">BibTeX</a>
   </nav>
 </header>
@@ -75,6 +73,7 @@
 <!-- ═══ hero cover ══════════════════════════════════════════════════════ -->
 <section class="hero risc-hero" id="top" aria-labelledby="project-title">
   <video id="hero-video" class="hero-background" autoplay muted loop playsinline preload="auto"
+    controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
     poster="static/images/posters/hero.jpg?v=fengmian" aria-hidden="true" tabindex="-1">
     <source src="static/videos/hero.mp4?v=fengmian" type="video/mp4">
   </video>
@@ -146,6 +145,7 @@
       <div class="column is-full">
         <div class="risc-card">
           <video poster="static/images/posters/method.jpg" controls playsinline
+                 controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                  preload="none" src="static/videos/method.mp4"></video>
         </div>
       </div>
@@ -230,69 +230,58 @@
     <div class="risc-grid">
       <div class="risc-card is-clickable" data-full="static/videos/manip_open_door_1080.mp4">
         <video poster="static/images/posters/manip_open_door.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_open_door_720.mp4"></video>
         <div class="risc-cap"><b>Opening a door</b><span>hinged built-in &middot; 23 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_refrigerator_1080.mp4">
         <video poster="static/images/posters/manip_refrigerator.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_refrigerator_720.mp4"></video>
         <div class="risc-cap"><b>Refrigerator</b><span>two-door articulation &middot; 39 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_microwave_1080.mp4">
         <video poster="static/images/posters/manip_microwave.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_microwave_720.mp4"></video>
         <div class="risc-cap"><b>Microwave</b><span>drop-down door &middot; 22 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_push_chair_1080.mp4">
         <video poster="static/images/posters/manip_push_chair.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_push_chair_720.mp4"></video>
         <div class="risc-cap"><b>Pushing a chair</b><span>free rigid body &middot; 19 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_steamer_1080.mp4">
         <video poster="static/images/posters/manip_steamer.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_steamer_720.mp4"></video>
         <div class="risc-cap"><b>Steamer</b><span>lid removal &middot; 14 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_rice_cooker_1080.mp4">
         <video poster="static/images/posters/manip_rice_cooker.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_rice_cooker_720.mp4"></video>
         <div class="risc-cap"><b>Rice cooker</b><span>small appliance lid &middot; 11 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_humidifier_1080.mp4">
         <video poster="static/images/posters/manip_humidifier.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_humidifier_720.mp4"></video>
         <div class="risc-cap"><b>Humidifier</b><span>tank removal &middot; 15 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/manip_airfly_1080.mp4">
         <video poster="static/images/posters/manip_airfly.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_airfly_720.mp4"></video>
         <div class="risc-cap"><b>Air fryer</b><span>drawer pull &middot; 15 s</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ comparisons ═════════════════════════════════════════════════════ -->
-<section class="section" id="ablation" style="background:var(--background-secondary);">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered">Comparisons</h2>
-    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
-      <p style="color:var(--text-secondary);">Drag to wipe between the two states.</p>
-    </div>
-
-    <div class="risc-card">
-      <div id="cmp-viewer" class="risc-viewer">
-        <button class="risc-viewer-cta" type="button">
-          <span class="cta-title">3DGS Capture vs. Reconstructed Scene</span>
-          <span class="cta-sub">Drag the divider to wipe; drag the scene to orbit in 3D.</span>
-        </button>
       </div>
     </div>
   </div>
@@ -339,7 +328,8 @@
 <!-- lightbox for full-resolution result clips -->
 <div class="risc-lightbox" id="lightbox">
   <button class="close" aria-label="close">&times;</button>
-  <video controls autoplay loop playsinline></video>
+  <video controls autoplay loop playsinline
+         controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"></video>
 </div>
 
 <button class="scroll-to-top" id="scroll-top" aria-label="back to top">

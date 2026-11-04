@@ -172,6 +172,42 @@
     targets.forEach(function (t) { io.observe(t.el); });
   }
 
+  /* ── disable video download, PiP, remote playback & right-click ────────── */
+  function lockVideo(v) {
+    if (!v || v.tagName !== 'VIDEO') return;
+    v.setAttribute('controlslist', 'nodownload noplaybackrate');
+    v.setAttribute('disablepictureinpicture', '');
+    v.setAttribute('disableremoteplayback', '');
+    try { v.controlsList.add('nodownload', 'noplaybackrate'); } catch (_) {}
+    v.disablePictureInPicture = true;
+    v.disableRemotePlayback = true;
+  }
+
+  function protectVideos() {
+    document.querySelectorAll('video').forEach(lockVideo);
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target && e.target.closest && e.target.closest('video')) {
+        e.preventDefault();
+      }
+    }, true);
+    document.addEventListener('dragstart', function (e) {
+      if (e.target && e.target.closest && e.target.closest('video')) {
+        e.preventDefault();
+      }
+    }, true);
+    if ('MutationObserver' in window) {
+      new MutationObserver(function (mutations) {
+        mutations.forEach(function (m) {
+          m.addedNodes.forEach(function (node) {
+            if (!node || node.nodeType !== 1) return;
+            if (node.tagName === 'VIDEO') lockVideo(node);
+            if (node.querySelectorAll) node.querySelectorAll('video').forEach(lockVideo);
+          });
+        });
+      }).observe(document.documentElement || document.body, {childList: true, subtree: true});
+    }
+  }
+
   /* ── back to top ────────────────────────────────────────────────────────── */
   function scrollTop() {
     var btn = document.getElementById('scroll-top');
@@ -185,6 +221,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    protectVideos();
     heroVideoSync();
     headerNavSpy();
     lazyVideos();
