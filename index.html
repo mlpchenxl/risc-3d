@@ -265,7 +265,7 @@
     <h2 class="title is-3 has-text-centered">Robot manipulation</h2>
     <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
       <p style="color:var(--text-secondary);">
-        Rendered in Isaac Sim from the reconstructed scene, unmodified.
+        Closed-loop mobile manipulation and articulated object interaction in the reconstructed simulation environments.
       </p>
     </div>
 
@@ -325,6 +325,29 @@
                controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/manip_airfly_720.mp4"></video>
         <div class="risc-cap"><b>Air fryer</b><span>drawer pull &middot; 15 s</span></div>
+      </div>
+    </div>
+
+    <h3 class="title is-4 has-text-centered" style="margin-top:3rem;">Sim-to-real transfer</h3>
+    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2rem;">
+      <p class="risc-section-sub has-text-centered" style="color:var(--text-secondary);">
+        Zero-shot deployment of policies trained in the reconstructed RISC-3D simulation onto the physical robot.
+      </p>
+    </div>
+
+    <div class="risc-grid" style="grid-template-columns:repeat(2, minmax(0, 1fr));max-width:980px;margin:0 auto;">
+      <div class="risc-card is-clickable" data-full="static/videos/sim2real_airfryer.mp4">
+        <video poster="static/images/posters/sim2real_airfryer.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
+               preload="none" data-lazy data-src="static/videos/sim2real_airfryer.mp4"></video>
+        <div class="risc-cap"><b>Air fryer &middot; drawer opening</b><span>real-world articulated transfer &middot; 13 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/sim2real_transfer.mp4">
+        <video poster="static/images/posters/sim2real_transfer.jpg" muted loop playsinline
+               controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
+               preload="none" data-lazy data-src="static/videos/sim2real_transfer.mp4"></video>
+        <div class="risc-cap"><b>Rigid object &middot; transfer</b><span>real-world countertop-to-sink &middot; 10 s</span></div>
       </div>
     </div>
   </div>
