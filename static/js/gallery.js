@@ -6,7 +6,7 @@
  *
  * All three columns initialize simultaneously when #assets enters the viewport,
  * and each column independently manages its own item index, prev/next arrows,
- * title & metadata chips, and bottom scrollable thumbnail strip.
+ * and title & metadata chips.
  */
 
 /** Articulated assets, with how far each one's joints actually travel. */
@@ -41,55 +41,6 @@ function renderFacts(container, bits) {
   }
 }
 
-function buildStrip(stripEl, list, kind, onSelect) {
-  if (!stripEl) return [];
-  stripEl.textContent = '';
-  return list.map((item, i) => {
-    const btn = el('button', 'gal-thumb');
-    btn.type = 'button';
-    btn.dataset.index = String(i);
-    btn.setAttribute('aria-label', `${item.label} (${i + 1} of ${list.length})`);
-
-    const preview = el('span', 'gal-thumb-preview');
-    if (item.poster) {
-      const img = el('img', 'gal-thumb-img');
-      img.src = item.poster;
-      img.alt = '';
-      img.loading = 'lazy';
-      preview.appendChild(img);
-    } else {
-      const idxBadge = el('span', 'gal-thumb-idx', String(i + 1).padStart(2, '0'));
-      const subBadge = el(
-        'span',
-        'gal-thumb-tag',
-        kind === 'rigid'
-          ? `${item.hulls ?? ''}h`
-          : (item.thumb || kind)
-      );
-      preview.append(idxBadge, subBadge);
-    }
-
-    const lbl = el('span', 'gal-thumb-label', item.label);
-    btn.append(preview, lbl);
-    btn.addEventListener('click', () => onSelect(i));
-    stripEl.appendChild(btn);
-    return btn;
-  });
-}
-
-function highlightStrip(thumbs, activeIdx) {
-  thumbs.forEach((btn, i) => {
-    const active = i === activeIdx;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-current', active ? 'true' : 'false');
-    if (active && btn.parentElement) {
-      const parent = btn.parentElement;
-      const targetLeft = btn.offsetLeft - (parent.clientWidth - btn.clientWidth) / 2;
-      parent.scrollTo({left: Math.max(0, targetLeft), behavior: 'smooth'});
-    }
-  });
-}
-
 async function mountRigidColumn(col, list) {
   if (!col || !list?.length) return;
   const stage = col.querySelector('[data-stage]');
@@ -97,7 +48,6 @@ async function mountRigidColumn(col, list) {
   const next = col.querySelector('[data-next]');
   const title = col.querySelector('[data-title]');
   const meta = col.querySelector('[data-meta]');
-  const strip = col.querySelector('[data-strip]');
   const modes = col.querySelector('[data-modes]');
 
   let idx = 0;
@@ -121,8 +71,6 @@ async function mountRigidColumn(col, list) {
     }
   }
 
-  const thumbs = buildStrip(strip, list, 'rigid', i => show(i));
-
   async function show(i) {
     if (busy) return;
     busy = true;
@@ -141,7 +89,6 @@ async function mountRigidColumn(col, list) {
     if (item.friction != null) bits.push(`μ ${item.friction}`);
     if (item.tris) bits.push(`${(item.tris / 1000).toFixed(0)}k tris`);
     renderFacts(meta, bits);
-    highlightStrip(thumbs, idx);
 
     try {
       const {mount} = await import('./rigid-viewer.js?v=3');
@@ -173,7 +120,6 @@ async function mountArticulatedColumn(col, list) {
   const next = col.querySelector('[data-next]');
   const title = col.querySelector('[data-title]');
   const meta = col.querySelector('[data-meta]');
-  const strip = col.querySelector('[data-strip]');
   const controlsBar = col.querySelector('[data-artic-controls]');
 
   let idx = 0;
@@ -181,8 +127,6 @@ async function mountArticulatedColumn(col, list) {
   let busy = false;
   let sliderInputs = [];
   let playBtn = null;
-
-  const thumbs = buildStrip(strip, list, 'articulated', i => show(i));
 
   function buildArticOverlay(mountedView) {
     if (!controlsBar) return;
@@ -240,7 +184,6 @@ async function mountArticulatedColumn(col, list) {
 
     title.textContent = item.label;
     renderFacts(meta, item.note ? [item.note] : []);
-    highlightStrip(thumbs, idx);
 
     try {
       const {mount} = await import('./mjcf-viewer.js?v=2');
@@ -288,12 +231,9 @@ async function mountBuiltinColumn(col, list) {
   const next = col.querySelector('[data-next]');
   const title = col.querySelector('[data-title]');
   const meta = col.querySelector('[data-meta]');
-  const strip = col.querySelector('[data-strip]');
 
   let idx = 0;
   let view = null;
-
-  const thumbs = buildStrip(strip, list, 'builtin', i => show(i));
 
   function show(i) {
     idx = (i + list.length) % list.length;
@@ -305,7 +245,6 @@ async function mountBuiltinColumn(col, list) {
 
     title.textContent = item.label;
     renderFacts(meta, item.note ? [item.note] : []);
-    highlightStrip(thumbs, idx);
 
     const v = el('video', 'gallery-video gal-video');
     v.src = `static/videos/turntable/${item.id}.mp4`;

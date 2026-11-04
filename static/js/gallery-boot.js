@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       s.textContent = 'Loading…';
     });
     try {
-      const {mountGallery} = await import('./gallery.js?v=10');
+      const {mountGallery} = await import('./gallery.js?v=11');
       stubs.forEach(s => s.remove());
       await mountGallery(host);
     } catch (err) {
