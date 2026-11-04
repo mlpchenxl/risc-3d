@@ -30,7 +30,7 @@
        system UI stack. -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  <link rel="stylesheet" href="static/css/risc3d.css?v=4">
+  <link rel="stylesheet" href="static/css/risc3d.css?v=5">
 
   <!-- Font Awesome is loaded as the SVG+JS build, not the CSS one: the template
        ships no `webfonts/` directory, so the CSS build's icons would all 404.
@@ -50,7 +50,7 @@
       }
     }
   </script>
-  <script type="module" src="static/js/gallery-boot.js?v=9"></script>
+  <script type="module" src="static/js/gallery-boot.js?v=10"></script>
   <script type="module" src="static/js/splat-panel.js?v=3"></script>
 </head>
 
@@ -188,29 +188,77 @@
 
 <!-- ═══ asset gallery ═══════════════════════════════════════════════════ -->
 <section class="section" id="assets" style="background:var(--background-secondary);">
-  <div class="container is-max-widescreen">
+  <div class="assets-wide-container">
     <h2 class="title is-3 has-text-centered">What comes out</h2>
 
-    <div class="gal" id="interact" tabindex="0">
-      <div class="gal-tabs" data-tabs></div>
-      <p class="gal-blurb" data-blurb></p>
+    <div class="gal gallery-grid" id="interact">
+      <!-- Column 1: Rigid -->
+      <article class="gallery-col" data-col="rigid" tabindex="0">
+        <header class="gallery-col-head">
+          <span class="gallery-badge is-rigid">Rigid</span>
+          <p class="gallery-sub">Reconstructed shape &amp; convex decomposition.</p>
+        </header>
+        <div class="gal-frame gallery-frame">
+          <button class="gal-arrow is-prev" type="button" data-prev aria-label="Previous rigid asset">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="gallery-stage gal-stage" data-stage></div>
+          <button class="gal-arrow is-next" type="button" data-next aria-label="Next rigid asset">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="gal-modes" data-modes></div>
+        </div>
+        <div class="gal-caption gallery-caption">
+          <b data-title></b>
+          <div class="gal-facts" data-meta data-facts></div>
+        </div>
+        <div class="gallery-strip" data-strip aria-label="Rigid assets"></div>
+      </article>
 
-      <div class="gal-frame">
-        <button class="gal-arrow is-prev" data-prev aria-label="previous">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="gal-stage" data-stage></div>
-        <button class="gal-arrow is-next" data-next aria-label="next">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-        <div class="gal-modes" data-modes hidden></div>
-      </div>
+      <!-- Column 2: Articulated -->
+      <article class="gallery-col" data-col="articulated" tabindex="0">
+        <header class="gallery-col-head">
+          <span class="gallery-badge is-articulated">Articulated</span>
+          <p class="gallery-sub">Part decomposition &amp; recovered joints.</p>
+        </header>
+        <div class="gal-frame gallery-frame">
+          <button class="gal-arrow is-prev" type="button" data-prev aria-label="Previous articulated asset">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="gallery-stage gal-stage" data-stage></div>
+          <button class="gal-arrow is-next" type="button" data-next aria-label="Next articulated asset">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="gal-modes gal-artic-bar" data-artic-controls></div>
+        </div>
+        <div class="gal-caption gallery-caption">
+          <b data-title></b>
+          <div class="gal-facts" data-meta data-facts></div>
+        </div>
+        <div class="gallery-strip" data-strip aria-label="Articulated assets"></div>
+      </article>
 
-      <div class="gal-caption">
-        <b data-title></b>
-        <div class="gal-facts" data-facts></div>
-      </div>
-      <div class="gal-dots" data-dots></div>
+      <!-- Column 3: Built-in -->
+      <article class="gallery-col" data-col="builtin" tabindex="0">
+        <header class="gallery-col-head">
+          <span class="gallery-badge is-builtin">Built-in</span>
+          <p class="gallery-sub">Wall-mounted cabinetry reconstructed in-place.</p>
+        </header>
+        <div class="gal-frame gallery-frame">
+          <button class="gal-arrow is-prev" type="button" data-prev aria-label="Previous built-in asset">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="gallery-stage gal-stage" data-stage></div>
+          <button class="gal-arrow is-next" type="button" data-next aria-label="Next built-in asset">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="gal-caption gallery-caption">
+          <b data-title></b>
+          <div class="gal-facts" data-meta data-facts></div>
+        </div>
+        <div class="gallery-strip" data-strip aria-label="Built-in assets"></div>
+      </article>
     </div>
   </div>
 </section>

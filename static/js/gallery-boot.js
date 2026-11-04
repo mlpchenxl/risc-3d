@@ -1,32 +1,43 @@
 /**
- * Start the asset gallery when the reader reaches it.
- *
- * Same policy as the capture panel: the first tab pulls a 1-2 MB glTF and the
- * articulated tab pulls the 9.7 MB MuJoCo engine, so none of it belongs in the
- * initial page load, and none of it should need a click either.
+ * Start all three asset gallery columns simultaneously when #assets enters view.
  */
 import {autoStart} from './viewer-gate.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const host = document.querySelector('.gal');
+  const host = document.querySelector('#assets .gal') || document.querySelector('.gal');
   if (!host) return;
 
-  const stub = document.createElement('button');
-  stub.className = 'risc-viewer-cta gal-start';
-  stub.textContent = 'Load the assets';
-  host.querySelector('[data-stage]').appendChild(stub);
+  const stages = [...host.querySelectorAll('[data-stage]')];
+  const stubs = stages.map(stage => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'risc-viewer-cta gal-start';
+    btn.textContent = 'Load assets';
+    stage.appendChild(btn);
+    return btn;
+  });
 
-  autoStart(host, async () => {
-    stub.disabled = true;
-    stub.textContent = 'Loading…';
+  const primaryStub = stubs[0];
+  if (!primaryStub) return;
+
+  const triggerAll = async () => {
+    stubs.forEach(s => {
+      s.disabled = true;
+      s.textContent = 'Loading…';
+    });
     try {
-      const {mountGallery} = await import('./gallery.js?v=9');
-      stub.remove();
+      const {mountGallery} = await import('./gallery.js?v=10');
+      stubs.forEach(s => s.remove());
       await mountGallery(host);
     } catch (err) {
-      stub.disabled = false;
-      stub.textContent = 'Retry';
+      stubs.forEach(s => {
+        s.disabled = false;
+        s.textContent = 'Retry';
+      });
       console.error('[gallery]', err);
     }
-  }, stub);
+  };
+
+  stubs.slice(1).forEach(s => s.addEventListener('click', () => primaryStub.click()));
+  autoStart(host, triggerAll, primaryStub);
 });

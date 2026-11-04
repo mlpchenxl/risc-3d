@@ -107,7 +107,7 @@ export async function mount(el, opts = {}) {
   const scene = new THREE.Scene();
   // Same backdrop as the gallery stage and the rigid viewer, so switching
   // tabs does not flash a different grey.
-  scene.background = new THREE.Color(0x1b2227);
+  scene.background = new THREE.Color(0x171c22);
 
   // MuJoCo is z-up, three.js is y-up. Rotating one parent lets every child
   // take its MuJoCo pose verbatim, with no per-frame conversion.
@@ -229,6 +229,7 @@ export async function mount(el, opts = {}) {
 
   let playing = true;
   let visible = true;
+  let manualSteps = 0;
 
   function actuate() {
     // Drive from simulated time, not wall clock: the animation then depends on
@@ -272,6 +273,12 @@ export async function mount(el, opts = {}) {
       const steps = Math.min(Math.round(span / model.opt.timestep), 40);
       for (let s = 0; s < steps; s++) mj.mj_step(model, data);
       syncPoses();
+      opts.onUpdate?.(data.ctrl, range, playing);
+    } else if (manualSteps > 0 && visible) {
+      manualSteps--;
+      for (let s = 0; s < 10; s++) mj.mj_step(model, data);
+      syncPoses();
+      opts.onUpdate?.(data.ctrl, range, playing);
     }
     controls.update();
     renderer.render(scene, camera);
@@ -292,7 +299,17 @@ export async function mount(el, opts = {}) {
       actuators: nu,
       geoms: drawn.length,
     },
-    setPlaying(v) { playing = v; last = performance.now(); },
+    actuators: range.map(([min, max], index) => ({index, min, max})),
+    isPlaying() { return playing; },
+    setPlaying(v) { playing = Boolean(v); last = performance.now(); },
+    getCtrl(a) { return data.ctrl[a]; },
+    setCtrl(a, val) {
+      playing = false;
+      const [lo, hi] = range[a] || [0, 1];
+      data.ctrl[a] = Math.min(hi, Math.max(lo, Number(val)));
+      manualSteps = 28;
+      last = performance.now();
+    },
     reset() {
       // Resets data.time too, which is what the actuation phase reads.
       mj.mj_resetData(model, data);
