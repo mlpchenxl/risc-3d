@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO(meta): fill in once the arXiv posting and author list are settled. -->
+  <meta name="title" content="RISC-3D: Reconstructing Interactive Simulatable 3D Scenes">
+  <meta name="description" content="RISC-3D turns a 3D Gaussian Splatting capture of a real room into a fully simulatable scene: rigid, articulated and built-in assets with joints and collision geometry, loadable in MuJoCo and Isaac.">
+  <meta name="keywords" content="3D Gaussian Splatting, scene reconstruction, articulated objects, MuJoCo, Isaac Sim, robot manipulation, indoor scenes">
+  <meta name="author" content="AUTHOR_LIST_TODO">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RISC-3D: Reconstructing Interactive Simulatable 3D Scenes">
+  <meta property="og:description" content="From a 3DGS capture of a real room to a simulatable scene with 161 bodies and 101 joints.">
+  <meta property="og:url" content="https://TODO.github.io/risc3d/">
+  <meta property="og:image" content="https://TODO.github.io/risc3d/static/images/social_preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>RISC-3D &middot; Reconstructing Interactive Simulatable 3D Scenes</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <!-- Everything is served locally: no Google Fonts, no CDN jQuery, no
+       academicons. The page has to load behind a firewall and out of a plain
+       gh-pages checkout, and the template's Inter falls back cleanly to the
+       system UI stack. -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/risc3d.css?v=4">
+
+  <!-- Font Awesome is loaded as the SVG+JS build, not the CSS one: the template
+       ships no `webfonts/` directory, so the CSS build's icons would all 404.
+       bulma-carousel / bulma-slider / jquery are vendored under static/ but not
+       loaded — nothing on this page uses a carousel yet. -->
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/risc3d.js?v=4"></script>
+
+  <!-- Bare specifiers for the two viewer panels. Neither three.js, the MuJoCo
+       engine nor the splat scene is fetched with the page: they start when the
+       reader scrolls near "Explore the scene", or on their button first. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./static/vendor/three/three.module.min.js",
+        "three/": "./static/vendor/three/"
+      }
+    }
+  </script>
+  <script type="module" src="static/js/gallery-boot.js?v=8"></script>
+  <script type="module" src="static/js/splat-panel.js?v=3"></script>
+  <script type="module" src="static/js/cmp-panel.js?v=7"></script>
+</head>
+
+<body>
+
+<!-- ═══ header ══════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <a class="wordmark" href="#top" aria-label="RISC-3D home">RISC-3D<span class="dot">.</span></a>
+  <nav class="header-nav" aria-label="Quick navigation">
+    <a href="#abstract">Abstract</a>
+    <a href="#method">Method</a>
+    <a href="#explore">The Capture</a>
+    <a href="#assets">Assets</a>
+    <a href="#interact">Simulation</a>
+    <a href="#results">Manipulation</a>
+    <a href="#ablation">Comparisons</a>
+    <a href="#BibTeX">BibTeX</a>
+  </nav>
+</header>
+
+<!-- ═══ hero cover ══════════════════════════════════════════════════════ -->
+<section class="hero risc-hero" id="top" aria-labelledby="project-title">
+  <video id="hero-video" class="hero-background" autoplay muted loop playsinline preload="auto"
+    poster="static/images/posters/hero.jpg?v=fengmian" aria-hidden="true" tabindex="-1">
+    <source src="static/videos/hero.mp4?v=fengmian" type="video/mp4">
+  </video>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-content">
+    <h1 id="project-title">RISC-3D</h1>
+    <p class="hero-subtitle"><span>Reconstructing Interactive Simulatable</span><span>3D Scenes from Real Captures</span></p>
+    <div class="resources" aria-label="Project resources">
+      <button type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6v18h12V7zM14 3v5h4M9 12h6M9 16h6"/></svg>
+        Paper <span class="resource-status">Coming soon</span>
+      </button>
+      <button type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 7-5 5 5 5m10-10 5 5-5 5M14 4l-4 16"/></svg>
+        Code <span class="resource-status">Coming soon</span>
+      </button>
+      <button type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg>
+        Dataset <span class="resource-status">Coming soon</span>
+      </button>
+      <button type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 10 5v10l-10 5-10-5V7zM2 7l10 5 10-5M12 12v10"/></svg>
+        Try RISC-3D <span class="resource-status">Coming soon</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ abstract ════════════════════════════════════════════════════════ -->
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO(abstract): paste the final abstract from main_english.tex. -->
+          <p>
+            Photorealistic capture and interactive simulation have advanced
+            separately: a 3D Gaussian Splatting scan reproduces a room down to its
+            reflections but cannot be touched, while a simulatable scene is authored
+            by hand. RISC-3D closes that gap. From a multi-room 3DGS capture we
+            recover the scene's structure, classify every object as rigid,
+            articulated, built-in or background, reconstruct each class with the
+            method its geometry demands, and resolve the result into a physically
+            consistent scene.
+          </p>
+          <p>
+            The output is not a mesh dump but an MJCF scene with collision geometry,
+            mass and friction, and driven joints &mdash; 161 bodies and 101 joints
+            for the room shown here &mdash; which loads unmodified in both MuJoCo and
+            Isaac Sim and supports robot manipulation out of the box.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ method ══════════════════════════════════════════════════════════ -->
+<section class="section" id="method" style="background:var(--background-secondary);">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <div class="risc-card" style="margin-bottom:2.5rem;">
+      <img src="static/images/figure1.jpg" alt="RISC-3D pipeline overview" style="background:#fff;">
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="risc-card">
+          <video poster="static/images/posters/method.jpg" controls playsinline
+                 preload="none" src="static/videos/method.mp4"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ explore ═════════════════════════════════════════════════════════ -->
+<section class="section" id="explore">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">The capture</h2>
+    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
+      <p style="color:var(--text-secondary);">
+        Where every asset below came from: 2.6 million gaussians across the full
+        storey capture, photoreal and completely inert. There is nothing here to
+        open, push or pick up &mdash; that is the gap the rest of this page is about.
+      </p>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="risc-viewer" id="splat-viewer">
+          <div class="risc-viewer-stub">
+            <div class="i"><i class="fas fa-cube"></i></div>
+            <b>3DGS capture &middot; free viewpoint</b>
+            <div>The full storey as scanned, before anything was segmented.</div>
+            <button class="risc-viewer-cta" data-splat-load>Start now</button>
+            <small>starts on its own when you reach it &middot; 62&nbsp;MB scene</small>
+            <small data-splat-error class="risc-viewer-err"></small>
+          </div>
+        </div>
+        <div class="risc-cap risc-cap-attached">
+          <b>Real capture</b>
+          <span>2,573,121 gaussians, orbitable.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ asset gallery ═══════════════════════════════════════════════════ -->
+<section class="section" id="assets" style="background:var(--background-secondary);">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">What comes out</h2>
+
+    <div class="gal" id="interact" tabindex="0">
+      <div class="gal-tabs" data-tabs></div>
+      <p class="gal-blurb" data-blurb></p>
+
+      <div class="gal-frame">
+        <button class="gal-arrow is-prev" data-prev aria-label="previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="gal-stage" data-stage></div>
+        <button class="gal-arrow is-next" data-next aria-label="next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="gal-modes" data-modes hidden></div>
+      </div>
+
+      <div class="gal-caption">
+        <b data-title></b>
+        <div class="gal-facts" data-facts></div>
+      </div>
+      <div class="gal-dots" data-dots></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ results ═════════════════════════════════════════════════════════ -->
+<section class="section" id="results" style="background:var(--background-secondary);">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Robot manipulation</h2>
+    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
+      <p style="color:var(--text-secondary);">
+        Rendered in Isaac Sim from the reconstructed scene, unmodified.
+        Click any clip for the full-resolution cut.
+      </p>
+    </div>
+
+    <!-- TODO(order): decide the running order and which clips make the cut. -->
+    <div class="risc-grid">
+      <div class="risc-card is-clickable" data-full="static/videos/manip_open_door_1080.mp4">
+        <video poster="static/images/posters/manip_open_door.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_open_door_720.mp4"></video>
+        <div class="risc-cap"><b>Opening a door</b><span>hinged built-in &middot; 23 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_refrigerator_1080.mp4">
+        <video poster="static/images/posters/manip_refrigerator.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_refrigerator_720.mp4"></video>
+        <div class="risc-cap"><b>Refrigerator</b><span>two-door articulation &middot; 39 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_microwave_1080.mp4">
+        <video poster="static/images/posters/manip_microwave.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_microwave_720.mp4"></video>
+        <div class="risc-cap"><b>Microwave</b><span>drop-down door &middot; 22 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_push_chair_1080.mp4">
+        <video poster="static/images/posters/manip_push_chair.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_push_chair_720.mp4"></video>
+        <div class="risc-cap"><b>Pushing a chair</b><span>free rigid body &middot; 19 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_steamer_1080.mp4">
+        <video poster="static/images/posters/manip_steamer.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_steamer_720.mp4"></video>
+        <div class="risc-cap"><b>Steamer</b><span>lid removal &middot; 14 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_rice_cooker_1080.mp4">
+        <video poster="static/images/posters/manip_rice_cooker.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_rice_cooker_720.mp4"></video>
+        <div class="risc-cap"><b>Rice cooker</b><span>small appliance lid &middot; 11 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_humidifier_1080.mp4">
+        <video poster="static/images/posters/manip_humidifier.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_humidifier_720.mp4"></video>
+        <div class="risc-cap"><b>Humidifier</b><span>tank removal &middot; 15 s</span></div>
+      </div>
+
+      <div class="risc-card is-clickable" data-full="static/videos/manip_airfly_1080.mp4">
+        <video poster="static/images/posters/manip_airfly.jpg" muted loop playsinline
+               preload="none" data-lazy data-src="static/videos/manip_airfly_720.mp4"></video>
+        <div class="risc-cap"><b>Air fryer</b><span>drawer pull &middot; 15 s</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ comparisons ═════════════════════════════════════════════════════ -->
+<section class="section" id="ablation" style="background:var(--background-secondary);">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered">Comparisons</h2>
+    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
+      <p style="color:var(--text-secondary);">Drag to wipe between the two states.</p>
+    </div>
+
+    <div class="risc-card">
+      <div id="cmp-viewer" class="risc-viewer">
+        <button class="risc-viewer-cta" type="button">
+          <span class="cta-title">3DGS Capture vs. Reconstructed Scene</span>
+          <span class="cta-sub">Drag the divider to wipe; drag the scene to orbit in 3D.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ bibtex ══════════════════════════════════════════════════════════ -->
+<section class="section" id="bibtex">
+  <span id="BibTeX"></span>
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title is-3" style="margin-bottom:0;padding-bottom:0;">BibTeX</h2>
+      <button class="copy-bibtex-btn" id="copy-bibtex">
+        <i class="fas fa-copy"></i><span id="copy-label">Copy</span>
+      </button>
+    </div>
+    <pre><code id="bibtex-content">@article{risc3d,
+  title   = {RISC-3D: Reconstructing Interactive Simulatable 3D Scenes from Real Captures},
+  author  = {TODO},
+  journal = {TODO},
+  year    = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<!-- ═══ footer ══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p style="font-size:0.9rem;">
+            Built on the
+            <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>,
+            itself adapted from <a href="https://nerfies.github.io">Nerfies</a>.
+            Licensed under
+            <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- lightbox for full-resolution result clips -->
+<div class="risc-lightbox" id="lightbox">
+  <button class="close" aria-label="close">&times;</button>
+  <video controls autoplay loop playsinline></video>
+</div>
+
+<button class="scroll-to-top" id="scroll-top" aria-label="back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+</body>
+</html>

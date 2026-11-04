@@ -1,0 +1,8 @@
+{
+  "name": "potted_plant_1",
+  "mass_kg": 3.5,
+  "hulls": 234,
+  "friction": 0.6,
+  "faces_in": 607550,
+  "faces_out": 182265
+}

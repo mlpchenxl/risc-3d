@@ -1,0 +1,8 @@
+{
+  "name": "bar_stool_2",
+  "mass_kg": 4.5,
+  "hulls": 37,
+  "friction": 0.6,
+  "faces_in": 300224,
+  "faces_out": 90067
+}

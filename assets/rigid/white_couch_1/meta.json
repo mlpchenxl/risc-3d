@@ -1,0 +1,8 @@
+{
+  "name": "white_couch_1",
+  "mass_kg": 35.0,
+  "hulls": 1,
+  "friction": 0.6,
+  "faces_in": 580896,
+  "faces_out": 174268
+}

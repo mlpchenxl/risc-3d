@@ -1,0 +1,8 @@
+{
+  "name": "fire_extinguisher_1_000",
+  "mass_kg": 5.0,
+  "hulls": 14,
+  "friction": 0.6,
+  "faces_in": 271192,
+  "faces_out": 81357
+}

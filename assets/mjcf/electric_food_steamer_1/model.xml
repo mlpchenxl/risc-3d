@@ -1,0 +1,118 @@
+<mujoco model="electric_food_steamer_1">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" />
+  <asset>
+    <mesh name="rounded_white_base" content_type="model/obj" file="rounded_white_base.obj" />
+    <mesh name="curved_control_panel" content_type="model/obj" file="curved_control_panel.obj" />
+    <mesh name="lower_black_gasket" content_type="model/obj" file="lower_black_gasket.obj" />
+    <mesh name="heating_basin_floor" content_type="model/obj" file="heating_basin_floor.obj" />
+    <mesh name="heating_basin_rim" content_type="model/obj" file="heating_basin_rim.obj" />
+    <mesh name="dial_bezel_torus" content_type="model/obj" file="dial_bezel_torus.obj" />
+    <mesh name="left_button_bore" content_type="model/obj" file="left_button_bore.obj" />
+    <mesh name="right_button_bore" content_type="model/obj" file="right_button_bore.obj" />
+    <mesh name="lower_transparent_wall" content_type="model/obj" file="lower_transparent_wall.obj" />
+    <mesh name="internal_tray_ledge" content_type="model/obj" file="internal_tray_ledge.obj" />
+    <mesh name="external_tray_seam" content_type="model/obj" file="external_tray_seam.obj" />
+    <mesh name="perforated_shelf_tray" content_type="model/obj" file="perforated_shelf_tray.obj" />
+    <mesh name="tray_stiffening_rim" content_type="model/obj" file="tray_stiffening_rim.obj" />
+    <mesh name="upper_transparent_wall" content_type="model/obj" file="upper_transparent_wall.obj" />
+    <mesh name="upper_lid_gasket" content_type="model/obj" file="upper_lid_gasket.obj" />
+    <mesh name="smoky_lid_panel" content_type="model/obj" file="smoky_lid_panel.obj" />
+    <mesh name="raised_lid_rim" content_type="model/obj" file="raised_lid_rim.obj" />
+    <mesh name="arched_lid_handle" content_type="model/obj" file="arched_lid_handle.obj" />
+    <mesh name="black_rotary_dial" content_type="model/obj" file="black_rotary_dial.obj" />
+    <mesh name="timer_icon_ring" content_type="model/obj" file="timer_icon_ring.obj" />
+    <mesh name="power_icon_ring" content_type="model/obj" file="power_icon_ring.obj" />
+  </asset>
+  <worldbody>
+    <body name="electric_food_steamer_1" pos="-3.845960 -9.734629 0.343528" euler="0 0 1.570796"><geom name="base_housing__rounded_body" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.94 1" mesh="rounded_white_base" />
+    <geom name="base_housing__control_panel" pos="0 -0.1205 0.05" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.94 1" mesh="curved_control_panel" />
+    <geom name="base_housing__panel_backing" size="0.109 0.003 0.0365" pos="0 -0.1192 0.05" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.94 1" />
+    <geom name="base_housing__lower_gasket" pos="0 0 0.0985" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.02 0.02 1" mesh="lower_black_gasket" />
+    <geom name="base_housing__heating_basin_floor" pos="0 0 0.0955" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.73 0.72 1" mesh="heating_basin_floor" />
+    <geom name="base_housing__heating_basin_rim" pos="0 0 0.1" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.73 0.72 1" mesh="heating_basin_rim" />
+    <geom name="base_housing__dial_bezel" pos="0 -0.127 0.05" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.78 0.78 0.75 1" mesh="dial_bezel_torus" />
+    <geom name="base_housing__left_button_bore" pos="-0.07 -0.1268 0.05" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" mesh="left_button_bore" />
+    <geom name="base_housing__right_button_bore" pos="0.07 -0.1268 0.05" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" mesh="right_button_bore" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="rounded_white_base" group="3" />
+    <geom pos="0 -0.1205 0.05" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="curved_control_panel" group="3" />
+    <geom size="0.109 0.003 0.0365" pos="0 -0.1192 0.05" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0 0 0.0985" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lower_black_gasket" group="3" />
+    <geom pos="0 0 0.0955" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="heating_basin_floor" group="3" />
+    <geom pos="0 0 0.1" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="heating_basin_rim" group="3" />
+    <geom pos="0 -0.127 0.05" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="dial_bezel_torus" group="3" />
+    <geom pos="-0.07 -0.1268 0.05" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="left_button_bore" group="3" />
+    <geom pos="0.07 -0.1268 0.05" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="right_button_bore" group="3" />
+    <geom name="lower_chamber__lower_wall" pos="0 0 0.102" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" mesh="lower_transparent_wall" />
+    <geom name="lower_chamber__tray_seam" pos="0 0 0.1945" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.84 0.92 0.42" mesh="internal_tray_ledge" />
+    <geom name="lower_chamber__horizontal_seam" pos="0 0 0.197" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.84 0.92 0.42" mesh="external_tray_seam" />
+    <geom pos="0 0 0.102" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lower_transparent_wall" group="3" />
+    <geom pos="0 0 0.1945" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="internal_tray_ledge" group="3" />
+    <geom pos="0 0 0.197" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="external_tray_seam" group="3" />
+    <geom name="shelf_tray__perforated_tray" pos="0 0 0.1985" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.86 0.88 0.87 0.92" mesh="perforated_shelf_tray" />
+    <geom name="shelf_tray__tray_rim" pos="0 0 0.2" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.86 0.88 0.87 0.92" mesh="tray_stiffening_rim" />
+    <geom pos="0 0 0.1985" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="perforated_shelf_tray" group="3" />
+    <geom pos="0 0 0.2" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="tray_stiffening_rim" group="3" />
+    <geom name="upper_chamber__upper_wall" pos="0 0 0.197" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" mesh="upper_transparent_wall" />
+    <geom name="upper_chamber__lid_gasket" pos="0 0 0.2895" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.02 0.02 1" mesh="upper_lid_gasket" />
+    <geom pos="0 0 0.197" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="upper_transparent_wall" group="3" />
+    <geom pos="0 0 0.2895" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="upper_lid_gasket" group="3" />
+    <body name="top_lid" pos="0 0 0.292">
+      <joint name="lid_lift" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.15" actuatorfrcrange="-84 84" damping="4.289" armature="0.0214" />
+      <geom name="top_lid__lid_panel" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" mesh="smoky_lid_panel" />
+      <geom name="top_lid__raised_rim" pos="0 0 0.017" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.84 0.92 0.42" mesh="raised_lid_rim" />
+      <geom name="top_lid__handle_foot_0" size="0.013 0.018 0.004" pos="-0.045 0 0.014" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" />
+      <geom name="top_lid__handle_foot_1" size="0.013 0.018 0.004" pos="0.045 0 0.014" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" />
+      <geom name="top_lid__lid_handle" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.82 0.92 1 0.3" mesh="arched_lid_handle" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="smoky_lid_panel" group="3" />
+      <geom pos="0 0 0.017" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="raised_lid_rim" group="3" />
+      <geom size="0.013 0.018 0.004" pos="-0.045 0 0.014" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.013 0.018 0.004" pos="0.045 0 0.014" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="arched_lid_handle" group="3" />
+    </body>
+    <body name="rotary_dial" pos="0 -0.1275 0.05">
+      <joint name="dial_rotate" pos="0 0 0" axis="0 -1 0" range="-2.356 2.356" actuatorfrcrange="-20 20" damping="0.500" armature="0.0020" />
+      <geom name="rotary_dial__dial_cap" pos="0 -0.009 0" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.016 0.017 1" mesh="black_rotary_dial" />
+      <geom name="rotary_dial__off_mark" size="0.002 0.0006 0.011" pos="0 -0.0186 0.017" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.78 0.78 0.75 1" />
+      <geom pos="0 -0.009 0" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="black_rotary_dial" group="3" />
+      <geom size="0.002 0.0006 0.011" pos="0 -0.0186 0.017" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+    <body name="left_button" pos="-0.07 -0.12735 0.05">
+      <joint name="left_button_press" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.003" actuatorfrcrange="-5 5" damping="0.400" armature="0.0020" />
+      <geom name="left_button__button_cap" size="0.01 0.003" pos="0 -0.0014 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.94 1" />
+      <geom name="left_button__timer_icon_ring" pos="0 -0.0048 0" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" mesh="timer_icon_ring" />
+      <geom name="left_button__clock_hand_vertical" size="0.0006 0.0004 0.00275" pos="0 -0.0052 0.0022" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" />
+      <geom name="left_button__clock_hand_slanted" size="0.0024 0.0004 0.0006" pos="0.0018 -0.0053 0.0002" quat="0.962425 0 0 -0.271547" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" />
+      <geom size="0.01 0.003" pos="0 -0.0014 0" quat="0.707105 0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom pos="0 -0.0048 0" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="timer_icon_ring" group="3" />
+      <geom size="0.0006 0.0004 0.00275" pos="0 -0.0052 0.0022" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.0024 0.0004 0.0006" pos="0.0018 -0.0053 0.0002" quat="0.962425 0 0 -0.271547" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+    <body name="right_button" pos="0.07 -0.12735 0.05">
+      <joint name="right_button_press" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.003" actuatorfrcrange="-5 5" damping="0.400" armature="0.0020" />
+      <geom name="right_button__button_cap" size="0.01 0.003" pos="0 -0.0014 0" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.94 1" />
+      <geom name="right_button__power_icon_ring" pos="0 -0.0048 0" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" mesh="power_icon_ring" />
+      <geom name="right_button__power_stem" size="0.00075 0.0004 0.0035" pos="0 -0.0053 0.0053" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.48 0.49 0.5 1" />
+      <geom size="0.01 0.003" pos="0 -0.0014 0" quat="0.707105 0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom pos="0 -0.0048 0" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="power_icon_ring" group="3" />
+      <geom size="0.00075 0.0004 0.0035" pos="0 -0.0053 0.0053" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+  </body></worldbody>
+  <actuator>
+    <position name="lid_lift_ctrl" joint="lid_lift" kp="21038" ctrlrange="0 0.15" forcerange="-84 84" />
+    <position name="dial_rotate_ctrl" joint="dial_rotate" kp="200" ctrlrange="-2.356 2.356" forcerange="-20 20" />
+    <position name="left_button_press_ctrl" joint="left_button_press" kp="200" ctrlrange="0 0.003" forcerange="-5 5" />
+    <position name="right_button_press_ctrl" joint="right_button_press" kp="200" ctrlrange="0 0.003" forcerange="-5 5" />
+  </actuator>
+  <contact>
+    <exclude body1="left_button" body2="right_button" />
+    <exclude body1="left_button" body2="rotary_dial" />
+    <exclude body1="left_button" body2="top_lid" />
+    <exclude body1="left_button" body2="world" />
+    <exclude body1="right_button" body2="rotary_dial" />
+    <exclude body1="right_button" body2="top_lid" />
+    <exclude body1="right_button" body2="world" />
+    <exclude body1="rotary_dial" body2="top_lid" />
+    <exclude body1="rotary_dial" body2="world" />
+    <exclude body1="top_lid" body2="world" />
+  </contact>
+</mujoco>

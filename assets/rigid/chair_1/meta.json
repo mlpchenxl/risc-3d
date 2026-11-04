@@ -1,0 +1,8 @@
+{
+  "name": "chair_1",
+  "mass_kg": 5.5,
+  "hulls": 11,
+  "friction": 0.6,
+  "faces_in": 677120,
+  "faces_out": 203136
+}

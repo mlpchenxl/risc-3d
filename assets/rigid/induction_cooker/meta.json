@@ -1,0 +1,8 @@
+{
+  "name": "induction_cooker",
+  "mass_kg": 3.5,
+  "hulls": 2,
+  "friction": 0.6,
+  "faces_in": 351056,
+  "faces_out": 105316
+}

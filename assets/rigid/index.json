@@ -1,0 +1,82 @@
+[
+ {
+  "id": "bar_stool_1_000",
+  "label": "Bar stool",
+  "mass_kg": 7.5,
+  "hulls": 49,
+  "friction": 0.6,
+  "tris": 90067
+ },
+ {
+  "id": "potted_plant_1",
+  "label": "Potted plant",
+  "mass_kg": 3.5,
+  "hulls": 234,
+  "friction": 0.6,
+  "tris": 182265
+ },
+ {
+  "id": "office_chair_1",
+  "label": "Office chair",
+  "mass_kg": 12.0,
+  "hulls": 67,
+  "friction": 0.6,
+  "tris": 87236
+ },
+ {
+  "id": "fire_extinguisher_1_000",
+  "label": "Fire extinguisher",
+  "mass_kg": 5.0,
+  "hulls": 14,
+  "friction": 0.6,
+  "tris": 81357
+ },
+ {
+  "id": "white_coffee_table_1",
+  "label": "White coffee table",
+  "mass_kg": 15.0,
+  "hulls": 1,
+  "friction": 0.6,
+  "tris": 99564
+ },
+ {
+  "id": "chair_1",
+  "label": "Chair",
+  "mass_kg": 5.5,
+  "hulls": 11,
+  "friction": 0.6,
+  "tris": 203136
+ },
+ {
+  "id": "induction_cooker",
+  "label": "Induction cooker",
+  "mass_kg": 3.5,
+  "hulls": 2,
+  "friction": 0.6,
+  "tris": 105316
+ },
+ {
+  "id": "sectional_sofa_1",
+  "label": "Sectional sofa",
+  "mass_kg": 45.0,
+  "hulls": 1,
+  "friction": 0.6,
+  "tris": 121116
+ },
+ {
+  "id": "speaker_1",
+  "label": "Speaker",
+  "mass_kg": 2.5,
+  "hulls": 1,
+  "friction": 0.6,
+  "tris": 50990
+ },
+ {
+  "id": "white_couch_1",
+  "label": "White couch",
+  "mass_kg": 35.0,
+  "hulls": 1,
+  "friction": 0.6,
+  "tris": 174268
+ }
+]

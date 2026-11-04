@@ -1,0 +1,78 @@
+<mujoco model="air_fryer_1">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" />
+  <asset>
+    <mesh name="outer_housing_shell" content_type="model/obj" file="outer_housing_shell.obj" />
+    <mesh name="top_cover_panel" content_type="model/obj" file="top_cover_panel.obj" />
+    <mesh name="top_perimeter_seam" content_type="model/obj" file="top_perimeter_seam.obj" />
+    <mesh name="upper_front_fascia" content_type="model/obj" file="upper_front_fascia.obj" />
+    <mesh name="lower_aperture_frame" content_type="model/obj" file="lower_aperture_frame.obj" />
+    <mesh name="touch_power_mark" content_type="model/obj" file="touch_power_mark.obj" />
+    <mesh name="touch_timer_mark" content_type="model/obj" file="touch_timer_mark.obj" />
+    <mesh name="touch_menu_mark" content_type="model/obj" file="touch_menu_mark.obj" />
+    <mesh name="touch_cancel_mark" content_type="model/obj" file="touch_cancel_mark.obj" />
+    <mesh name="rear_heating_fan_grille" content_type="model/obj" file="rear_heating_fan_grille.obj" />
+    <mesh name="drawer_front_face" content_type="model/obj" file="drawer_front_face.obj" />
+    <mesh name="drawer_dark_inlay" content_type="model/obj" file="drawer_dark_inlay.obj" />
+    <mesh name="trunk_pull_handle" content_type="model/obj" file="trunk_pull_handle.obj" />
+    <mesh name="basket_cavity_shell" content_type="model/obj" file="basket_cavity_shell.obj" />
+    <mesh name="drawer_side_runners" content_type="model/obj" file="drawer_side_runners.obj" />
+    <mesh name="perforated_crisper_tray" content_type="model/obj" file="perforated_crisper_tray.obj" />
+  </asset>
+  <worldbody>
+    <body name="air_fryer_1" pos="-3.827798 -10.145033 0.348259" euler="0 0 1.570796"><geom name="main_housing__outer_housing_shell" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" mesh="outer_housing_shell" />
+    <geom name="main_housing__top_cover_panel" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" mesh="top_cover_panel" />
+    <geom name="main_housing__top_perimeter_seam" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.2 0.2 0.19 1" mesh="top_perimeter_seam" />
+    <geom name="main_housing__top_central_mark" size="0.0107812 0.00131384 0.00101213" pos="0 -0.0175179 0.322362" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.55 0.53 1" />
+    <geom name="main_housing__upper_front_fascia" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" mesh="upper_front_fascia" />
+    <geom name="main_housing__lower_aperture_frame" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.2 0.2 0.19 1" mesh="lower_aperture_frame" />
+    <geom name="main_housing__circular_display" size="0.025875 0.00175179" pos="0 -0.162478 0.234475" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.005 0.005 0.005 1" />
+    <geom name="main_housing__display_bezel_lip" size="0.0301875 0.000875895" pos="0 -0.160288 0.234475" quat="0.707105 0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" />
+    <geom name="main_housing__touch_power_mark" pos="-0.077625 -0.158712 0.250501" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.55 0.53 1" mesh="touch_power_mark" />
+    <geom name="main_housing__touch_timer_mark" pos="-0.077625 -0.158712 0.214233" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.55 0.53 1" mesh="touch_timer_mark" />
+    <geom name="main_housing__touch_menu_mark" pos="0.077625 -0.158712 0.250501" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.55 0.53 1" mesh="touch_menu_mark" />
+    <geom name="main_housing__touch_cancel_mark" pos="0.077625 -0.158712 0.214233" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.55 0.53 1" mesh="touch_cancel_mark" />
+    <geom name="main_housing__front_foot_0" size="0.0280312 0.00590405" pos="-0.113203 -0.0945965 0.00927781" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" />
+    <geom name="main_housing__front_foot_1" size="0.0280312 0.00590405" pos="0.113203 -0.0945965 0.00927781" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" />
+    <geom name="main_housing__slide_rail_0" size="0.00539065 0.118246 0.0050606" pos="-0.134766 -0.00525536 0.0522931" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.22 0.22 0.22 1" />
+    <geom name="main_housing__slide_rail_1" size="0.00539065 0.118246 0.0050606" pos="0.134766 -0.00525536 0.0522931" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.22 0.22 0.22 1" />
+    <geom name="main_housing__rear_heating_fan" pos="0 0.126129 0.113864" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" mesh="rear_heating_fan_grille" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="outer_housing_shell" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="top_cover_panel" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="top_perimeter_seam" group="3" />
+    <geom size="0.0107812 0.00131384 0.00101213" pos="0 -0.0175179 0.322362" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="upper_front_fascia" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lower_aperture_frame" group="3" />
+    <geom size="0.025875 0.00175179" pos="0 -0.162478 0.234475" quat="0.707105 0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0301875 0.000875895" pos="0 -0.160288 0.234475" quat="0.707105 0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="-0.077625 -0.158712 0.250501" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="touch_power_mark" group="3" />
+    <geom pos="-0.077625 -0.158712 0.214233" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="touch_timer_mark" group="3" />
+    <geom pos="0.077625 -0.158712 0.250501" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="touch_menu_mark" group="3" />
+    <geom pos="0.077625 -0.158712 0.214233" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="touch_cancel_mark" group="3" />
+    <geom size="0.0280312 0.00590405" pos="-0.113203 -0.0945965 0.00927781" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0280312 0.00590405" pos="0.113203 -0.0945965 0.00927781" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00539065 0.118246 0.0050606" pos="-0.134766 -0.00525536 0.0522931" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00539065 0.118246 0.0050606" pos="0.134766 -0.00525536 0.0522931" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0 0.126129 0.113864" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="rear_heating_fan_grille" group="3" />
+    <body name="basket_drawer" pos="0 -0.152405 0.10543">
+      <joint name="housing_to_basket" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.218973" actuatorfrcrange="-316 316" damping="16.130" armature="0.0806" />
+      <geom name="basket_drawer__drawer_front_face" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" mesh="drawer_front_face" />
+      <geom name="basket_drawer__drawer_dark_inlay" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.005 0.005 0.005 1" mesh="drawer_dark_inlay" />
+      <geom name="basket_drawer__trunk_pull_handle" pos="0 0.00350357 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.92 1" mesh="trunk_pull_handle" />
+      <geom name="basket_drawer__basket_cavity_shell" pos="0 0 0.00168687" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" mesh="basket_cavity_shell" />
+      <geom name="basket_drawer__drawer_side_runners" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.22 0.22 0.22 1" mesh="drawer_side_runners" />
+      <geom name="basket_drawer__perforated_crisper_tray" pos="0 0.137515 -0.0518714" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.22 0.22 0.22 1" mesh="perforated_crisper_tray" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="drawer_front_face" group="3" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="drawer_dark_inlay" group="3" />
+      <geom pos="0 0.00350357 0" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="trunk_pull_handle" group="3" />
+      <geom pos="0 0 0.00168687" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="basket_cavity_shell" group="3" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="drawer_side_runners" group="3" />
+      <geom pos="0 0.137515 -0.0518714" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="perforated_crisper_tray" group="3" />
+    </body>
+  </body></worldbody>
+  <actuator>
+    <position name="housing_to_basket_ctrl" joint="housing_to_basket" kp="79116" ctrlrange="0 0.218973" forcerange="-316 316" />
+  </actuator>
+  <contact>
+    <exclude body1="basket_drawer" body2="world" />
+  </contact>
+</mujoco>

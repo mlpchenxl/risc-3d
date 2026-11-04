@@ -1,0 +1,8 @@
+{
+  "name": "white_coffee_table_1",
+  "mass_kg": 15.0,
+  "hulls": 1,
+  "friction": 0.6,
+  "faces_in": 331880,
+  "faces_out": 99564
+}

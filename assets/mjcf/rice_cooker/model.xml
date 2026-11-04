@@ -1,0 +1,73 @@
+<mujoco model="rice_cooker">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" />
+  <asset>
+    <mesh name="body_shell" content_type="model/obj" file="body_shell.obj" />
+    <mesh name="base_plinth" content_type="model/obj" file="base_plinth.obj" />
+    <mesh name="cavity_rim" content_type="model/obj" file="cavity_rim.obj" />
+    <mesh name="display_screen" content_type="model/obj" file="display_screen.obj" />
+    <mesh name="pot_bowl" content_type="model/obj" file="pot_bowl.obj" />
+    <mesh name="lid_shell" content_type="model/obj" file="lid_shell.obj" />
+    <mesh name="steam_vent" content_type="model/obj" file="steam_vent.obj" />
+    <mesh name="lid_gasket" content_type="model/obj" file="lid_gasket.obj" />
+    <mesh name="lid_release_cap" content_type="model/obj" file="lid_release_cap.obj" />
+  </asset>
+  <worldbody>
+    <body name="rice_cooker" pos="-2.080241 -10.812620 0.346571" euler="0 0 3.141593"><geom name="body__body_shell" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" mesh="body_shell" />
+    <geom name="body__base_plinth" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" mesh="base_plinth" />
+    <geom name="body__heating_plate" size="0.073 0.002" pos="0 0.005 0.04" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.42 0.4 0.36 1" />
+    <geom name="body__cavity_rim" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.72 0.69 1" mesh="cavity_rim" />
+    <geom name="body__front_seam" size="0.065 0.0006 0.0007" pos="0 -0.18035 0.1737" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" />
+    <geom name="body__side_seam_0" size="0.0006 0.08 0.0007" pos="-0.1494 -0.005 0.1737" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" />
+    <geom name="body__side_seam_1" size="0.0006 0.08 0.0007" pos="0.1494 -0.005 0.1737" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.055 0.055 0.052 1" />
+    <geom name="body__display_screen" pos="0 -0.18105 0.096" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.015 0.014 1" mesh="display_screen" />
+    <geom name="body__hinge_knuckle_0" size="0.006 0.023" pos="-0.067 0.186 0.185" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+    <geom name="body__hinge_bracket_0" size="0.0175 0.003 0.009" pos="-0.067 0.183 0.179" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+    <geom name="body__hinge_knuckle_1" size="0.006 0.023" pos="0.067 0.186 0.185" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+    <geom name="body__hinge_bracket_1" size="0.0175 0.003 0.009" pos="0.067 0.183 0.179" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="body_shell" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="base_plinth" group="3" />
+    <geom size="0.073 0.002" pos="0 0.005 0.04" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="cavity_rim" group="3" />
+    <geom size="0.065 0.0006 0.0007" pos="0 -0.18035 0.1737" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0006 0.08 0.0007" pos="-0.1494 -0.005 0.1737" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0006 0.08 0.0007" pos="0.1494 -0.005 0.1737" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0 -0.18105 0.096" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="display_screen" group="3" />
+    <geom size="0.006 0.023" pos="-0.067 0.186 0.185" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0175 0.003 0.009" pos="-0.067 0.183 0.179" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.006 0.023" pos="0.067 0.186 0.185" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0175 0.003 0.009" pos="0.067 0.183 0.179" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom name="inner_pot__pot_bowl" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.5 0.52 0.52 1" mesh="pot_bowl" />
+    <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="pot_bowl" group="3" />
+    <body name="lid" pos="0 0.18 0.175">
+      <joint name="body_to_lid" pos="0 0 0" axis="-1 0 0" range="0 1.8326" actuatorfrcrange="-425 425" damping="42.494" armature="0.7855" />
+      <geom name="lid__lid_shell" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" mesh="lid_shell" />
+      <geom name="lid__steam_vent" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.5 0.5 0.48 1" mesh="steam_vent" />
+      <geom name="lid__inner_liner" size="0.088 0.0015" pos="0 -0.175 -0.0015" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.72 0.69 1" />
+      <geom name="lid__gasket" pos="0 -0.175 -0.003" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.36 0.36 0.34 1" mesh="lid_gasket" />
+      <geom name="lid__hinge_knuckle" size="0.006 0.025" pos="0 0.01 0.01" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+      <geom name="lid__hinge_bridge" size="0.026 0.004 0.005" pos="0 0.003 0.006" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.9 0.86 1" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lid_shell" group="3" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="steam_vent" group="3" />
+      <geom size="0.088 0.0015" pos="0 -0.175 -0.0015" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom pos="0 -0.175 -0.003" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lid_gasket" group="3" />
+      <geom size="0.006 0.025" pos="0 0.01 0.01" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.026 0.004 0.005" pos="0 0.003 0.006" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <body name="lid_release" pos="0 -0.36 0.022">
+        <joint name="lid_to_release" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.006" actuatorfrcrange="-5 5" damping="0.400" armature="0.0020" />
+        <geom name="lid_release__cap" pos="0 -0.002 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.72 0.69 1" mesh="lid_release_cap" />
+        <geom name="lid_release__label" size="0.01 0.000275 0.001" pos="0 -0.00425 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.015 0.014 1" />
+        <geom pos="0 -0.002 0" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="lid_release_cap" group="3" />
+        <geom size="0.01 0.000275 0.001" pos="0 -0.00425 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      </body>
+    </body>
+  </body></worldbody>
+  <actuator>
+    <position name="body_to_lid_ctrl" joint="body_to_lid" kp="10623" ctrlrange="0 1.8326" forcerange="-425 425" />
+    <position name="lid_to_release_ctrl" joint="lid_to_release" kp="200" ctrlrange="0 0.006" forcerange="-5 5" />
+  </actuator>
+  <contact>
+    <exclude body1="lid" body2="lid_release" />
+    <exclude body1="lid" body2="world" />
+    <exclude body1="lid_release" body2="world" />
+  </contact>
+</mujoco>

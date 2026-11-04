@@ -1,0 +1,8 @@
+{
+  "name": "speaker_1",
+  "mass_kg": 2.5,
+  "hulls": 1,
+  "friction": 0.6,
+  "faces_in": 169968,
+  "faces_out": 50990
+}

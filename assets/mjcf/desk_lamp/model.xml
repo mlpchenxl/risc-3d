@@ -1,0 +1,127 @@
+<mujoco model="desk_lamp">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" />
+  <asset>
+    <mesh name="base_slab" content_type="model/obj" file="base_slab.obj" />
+    <mesh name="inset_top_panel" content_type="model/obj" file="inset_top_panel.obj" />
+    <mesh name="raised_rim_outer" content_type="model/obj" file="raised_rim_outer.obj" />
+    <mesh name="vertical_post" content_type="model/obj" file="vertical_post.obj" />
+    <mesh name="post_foot_collar" content_type="model/obj" file="post_foot_collar.obj" />
+    <mesh name="upper_hinge_barrel" content_type="model/obj" file="upper_hinge_barrel.obj" />
+    <mesh name="upper_hinge_end_cap" content_type="model/obj" file="upper_hinge_end_cap.obj" />
+    <mesh name="central_pivot_hub" content_type="model/obj" file="central_pivot_hub.obj" />
+    <mesh name="central_front_disk" content_type="model/obj" file="central_front_disk.obj" />
+    <mesh name="left_head_top" content_type="model/obj" file="left_head_top.obj" />
+    <mesh name="right_head_top" content_type="model/obj" file="right_head_top.obj" />
+    <mesh name="light_head_left_end_cap" content_type="model/obj" file="light_head_left_end_cap.obj" />
+    <mesh name="light_head_right_end_cap" content_type="model/obj" file="light_head_right_end_cap.obj" />
+    <mesh name="left_diffuser_strip" content_type="model/obj" file="left_diffuser_strip.obj" />
+    <mesh name="right_diffuser_strip" content_type="model/obj" file="right_diffuser_strip.obj" />
+  </asset>
+  <worldbody>
+    <body name="desk_lamp" pos="-0.552463 -10.817776 0.350977" euler="0 0 3.141593"><geom name="base__base_slab" pos="0 0 0.011725" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="base_slab" />
+    <geom name="base__inset_top_panel" pos="0 -0.00402 0.024455" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.86 0.86 0.83 1" mesh="inset_top_panel" />
+    <geom name="base__raised_rim" pos="0 -0.00402 0.025795" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="raised_rim_outer" />
+    <geom name="base__base_wire_slot" size="0.00201 0.02747 0.001005" pos="0.025125 0.020435 0.02747" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+    <geom name="base__vertical_post" pos="0.05025 0.05695 0.23785" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="vertical_post" />
+    <geom name="base__post_foot_collar" pos="0.05025 0.05695 0.03015" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="post_foot_collar" />
+    <geom name="base__post_wire_channel" size="0.00201 0.00134 0.188672" pos="0.03886 0.04824 0.233562" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+    <geom name="base__upper_hinge_barrel" pos="0.05025 0.05695 0.4623" quat="0.707105 0 0.707108 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="upper_hinge_barrel" />
+    <geom name="base__upper_hinge_end_cap" pos="0.08911 0.05695 0.4623" quat="0.707105 0 0.707108 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.86 0.86 0.83 1" mesh="upper_hinge_end_cap" />
+    <geom name="base__hinge_wire_bore" size="0.00268 0.03283" pos="0.05025 0.06365 0.47034" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+    <geom pos="0 0 0.011725" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="base_slab" group="3" />
+    <geom pos="0 -0.00402 0.024455" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="inset_top_panel" group="3" />
+    <geom pos="0 -0.00402 0.025795" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="raised_rim_outer" group="3" />
+    <geom size="0.00201 0.02747 0.001005" pos="0.025125 0.020435 0.02747" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0.05025 0.05695 0.23785" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="vertical_post" group="3" />
+    <geom pos="0.05025 0.05695 0.03015" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="post_foot_collar" group="3" />
+    <geom size="0.00201 0.00134 0.188672" pos="0.03886 0.04824 0.233562" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0.05025 0.05695 0.4623" quat="0.707105 0 0.707108 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="upper_hinge_barrel" group="3" />
+    <geom pos="0.08911 0.05695 0.4623" quat="0.707105 0 0.707108 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="upper_hinge_end_cap" group="3" />
+    <geom size="0.00268 0.03283" pos="0.05025 0.06365 0.47034" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <body name="diagonal_arm" pos="0.05025 0.05695 0.4623">
+      <joint name="upper_hinge" pos="0 0 0" axis="1 0 0" range="-0.55 1.31" actuatorfrcrange="-48 48" damping="4.760" armature="0.0529" />
+      <geom name="diagonal_arm__upper_hinge_pin" size="0.0067 0.04757" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.56 0.56 1" />
+      <geom name="diagonal_arm__upper_yoke_0" size="0.00536 0.01608 0.01541" pos="-0.04489 -0.01005 -0.0067" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__upper_yoke_1" size="0.00536 0.01608 0.01541" pos="0.04489 -0.01005 -0.0067" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__upper_yoke_bridge" size="0.04288 0.00603 0.00737" pos="0 -0.02479 -0.01943" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__diagonal_support_bar" size="0.01005 0.061037 0.00804" pos="0 -0.09581 -0.073365" quat="0.315185 -0.94903 0 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__upper_bar_socket" size="0.01139 0.01876 0.008375" pos="0 -0.04489 -0.03484" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__arm_wire_channel" size="0.002345 0.0500505 0.00201" pos="-0.01206 -0.09581 -0.074705" quat="0.315185 -0.94903 0 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+      <geom name="diagonal_arm__lower_arm_joint_housing" size="0.02412 0.04087" pos="0 -0.14472 -0.10988" quat="0.707105 0 0.707108 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__lower_housing_cap_0" size="0.02412" pos="-0.04087 -0.14472 -0.10988" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__lower_housing_cap_1" size="0.02412" pos="0.04087 -0.14472 -0.10988" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__hub_neck_0" size="0.00335 0.01139 0.025125" pos="-0.01809 -0.15276 -0.12864" quat="0.984727 -0.174108 0 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__hub_neck_1" size="0.00335 0.01139 0.025125" pos="0.01809 -0.15276 -0.12864" quat="0.984727 -0.174108 0 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+      <geom name="diagonal_arm__central_pivot_hub" pos="0 -0.1608 -0.1474" quat="0.707105 -0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="central_pivot_hub" />
+      <geom name="diagonal_arm__central_front_disk" pos="0 -0.18492 -0.1474" quat="0.707105 -0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.86 0.86 0.83 1" mesh="central_front_disk" />
+      <geom name="diagonal_arm__hub_wire_bore" size="0.00268 0.02345" pos="-0.00804 -0.1608 -0.13534" quat="0.707105 -0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+      <geom size="0.0067 0.04757" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.00536 0.01608 0.01541" pos="-0.04489 -0.01005 -0.0067" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.00536 0.01608 0.01541" pos="0.04489 -0.01005 -0.0067" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.04288 0.00603 0.00737" pos="0 -0.02479 -0.01943" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.01005 0.061037 0.00804" pos="0 -0.09581 -0.073365" quat="0.315185 -0.94903 0 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.01139 0.01876 0.008375" pos="0 -0.04489 -0.03484" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.002345 0.0500505 0.00201" pos="-0.01206 -0.09581 -0.074705" quat="0.315185 -0.94903 0 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.02412 0.04087" pos="0 -0.14472 -0.10988" quat="0.707105 0 0.707108 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.02412" pos="-0.04087 -0.14472 -0.10988" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.02412" pos="0.04087 -0.14472 -0.10988" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.00335 0.01139 0.025125" pos="-0.01809 -0.15276 -0.12864" quat="0.984727 -0.174108 0 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.00335 0.01139 0.025125" pos="0.01809 -0.15276 -0.12864" quat="0.984727 -0.174108 0 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom pos="0 -0.1608 -0.1474" quat="0.707105 -0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="central_pivot_hub" group="3" />
+      <geom pos="0 -0.18492 -0.1474" quat="0.707105 -0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="central_front_disk" group="3" />
+      <geom size="0.00268 0.02345" pos="-0.00804 -0.1608 -0.13534" quat="0.707105 -0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <body name="light_head" pos="0 -0.1608 -0.1474">
+        <joint name="head_pivot" pos="0 0 0" axis="0 1 0" range="-0.7 1.57" actuatorfrcrange="-20 20" damping="0.500" armature="0.0020" />
+        <geom name="light_head__left_head_top" pos="-0.1809 0 0.0067" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="left_head_top" />
+        <geom name="light_head__left_front_lip" size="0.10385 0.00402 0.01541" pos="-0.1809 -0.01876 -0.00335" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__left_rear_lip" size="0.10385 0.00402 0.01541" pos="-0.1809 0.01876 -0.00335" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__right_head_top" pos="0.1809 0 0.0067" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="right_head_top" />
+        <geom name="light_head__right_front_lip" size="0.10385 0.00402 0.01541" pos="0.1809 -0.01876 -0.00335" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__right_rear_lip" size="0.10385 0.00402 0.01541" pos="0.1809 0.01876 -0.00335" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__left_end_cap" pos="-0.28475 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="light_head_left_end_cap" />
+        <geom name="light_head__right_end_cap" pos="0.28475 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" mesh="light_head_right_end_cap" />
+        <geom name="light_head__rear_center_bridge" size="0.078725 0.00603 0.00469" pos="0 0.02881 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__front_center_bridge" size="0.078725 0.00603 0.00469" pos="0 -0.02613 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__front_bearing_ear" size="0.01742 0.00871 0.018425" pos="0 -0.02881 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__rear_bearing_ear" size="0.01742 0.00871 0.018425" pos="0 0.03149 -0.00402" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.92 0.92 0.89 1" />
+        <geom name="light_head__central_pivot_pin" size="0.0067 0.04422" quat="0.707105 -0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.55 0.56 0.56 1" />
+        <geom name="light_head__left_diffuser_strip" pos="-0.15544 -0.01139 -0.01809" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.97 0.96 0.52" mesh="left_diffuser_strip" />
+        <geom name="light_head__left_led_board" size="0.10184 0.00335 0.00134" pos="-0.15544 -0.01139 -0.014405" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="1 0.82 0.35 1" />
+        <geom name="light_head__left_head_wire_channel" size="0.12529 0.001675 0.00134" pos="-0.14003 0.013735 -0.01005" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+        <geom name="light_head__right_diffuser_strip" pos="0.15544 -0.01139 -0.01809" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.97 0.96 0.52" mesh="right_diffuser_strip" />
+        <geom name="light_head__right_led_board" size="0.10184 0.00335 0.00134" pos="0.15544 -0.01139 -0.014405" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="1 0.82 0.35 1" />
+        <geom name="light_head__right_head_wire_channel" size="0.12529 0.001675 0.00134" pos="0.14003 0.013735 -0.01005" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+        <geom name="light_head__center_head_wire_channel" size="0.03015 0.00402 0.00134" pos="0 0.013735 -0.01005" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.02 0.025 0.03 1" />
+        <geom pos="-0.1809 0 0.0067" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="left_head_top" group="3" />
+        <geom size="0.10385 0.00402 0.01541" pos="-0.1809 -0.01876 -0.00335" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.10385 0.00402 0.01541" pos="-0.1809 0.01876 -0.00335" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom pos="0.1809 0 0.0067" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="right_head_top" group="3" />
+        <geom size="0.10385 0.00402 0.01541" pos="0.1809 -0.01876 -0.00335" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.10385 0.00402 0.01541" pos="0.1809 0.01876 -0.00335" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom pos="-0.28475 0 0" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="light_head_left_end_cap" group="3" />
+        <geom pos="0.28475 0 0" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="light_head_right_end_cap" group="3" />
+        <geom size="0.078725 0.00603 0.00469" pos="0 0.02881 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.078725 0.00603 0.00469" pos="0 -0.02613 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.01742 0.00871 0.018425" pos="0 -0.02881 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.01742 0.00871 0.018425" pos="0 0.03149 -0.00402" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.0067 0.04422" quat="0.707105 -0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom pos="-0.15544 -0.01139 -0.01809" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="left_diffuser_strip" group="3" />
+        <geom size="0.10184 0.00335 0.00134" pos="-0.15544 -0.01139 -0.014405" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.12529 0.001675 0.00134" pos="-0.14003 0.013735 -0.01005" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom pos="0.15544 -0.01139 -0.01809" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="right_diffuser_strip" group="3" />
+        <geom size="0.10184 0.00335 0.00134" pos="0.15544 -0.01139 -0.014405" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.12529 0.001675 0.00134" pos="0.14003 0.013735 -0.01005" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+        <geom size="0.03015 0.00402 0.00134" pos="0 0.013735 -0.01005" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      </body>
+    </body>
+  </body></worldbody>
+  <actuator>
+    <position name="upper_hinge_ctrl" joint="upper_hinge" kp="1190" ctrlrange="-0.55 1.31" forcerange="-48 48" />
+    <position name="head_pivot_ctrl" joint="head_pivot" kp="200" ctrlrange="-0.7 1.57" forcerange="-20 20" />
+  </actuator>
+  <contact>
+    <exclude body1="diagonal_arm" body2="light_head" />
+    <exclude body1="diagonal_arm" body2="world" />
+    <exclude body1="light_head" body2="world" />
+  </contact>
+</mujoco>

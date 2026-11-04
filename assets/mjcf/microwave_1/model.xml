@@ -1,0 +1,175 @@
+<mujoco model="microwave_1">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" />
+  <asset>
+    <mesh name="rounded_outer_cabinet" content_type="model/obj" file="rounded_outer_cabinet.obj" />
+    <mesh name="top_recess_panel" content_type="model/obj" file="top_recess_panel.obj" />
+    <mesh name="control_fascia" content_type="model/obj" file="control_fascia.obj" />
+    <mesh name="turntable_roller_ring" content_type="model/obj" file="turntable_roller_ring.obj" />
+    <mesh name="door_framed_slab" content_type="model/obj" file="door_framed_slab.obj" />
+    <mesh name="door_window_frame" content_type="model/obj" file="door_window_frame.obj" />
+    <mesh name="microwave_knob_cap" content_type="model/obj" file="microwave_knob_cap.obj" />
+    <mesh name="release_button_plate" content_type="model/obj" file="release_button_plate.obj" />
+  </asset>
+  <worldbody>
+    <body name="microwave_1" pos="-3.846767 -10.718047 0.368635" euler="0 0 1.570796"><geom name="cabinet__outer_cabinet" pos="0 0 0.118613" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="rounded_outer_cabinet" />
+    <geom name="cabinet__top_recessed_panel" pos="-0.010989 0.00549451 0.237682" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" mesh="top_recess_panel" />
+    <geom name="cabinet__top_front_groove" size="0.203296 0.00164835 0.000547445" pos="-0.010989 -0.12967 0.2375" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" />
+    <geom name="cabinet__side_panel_top" size="0.00329671 0.134615 0.00273722" pos="0.249451 0.010989 0.198905" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" />
+    <geom name="cabinet__side_panel_bottom" size="0.00329671 0.134615 0.00273722" pos="0.249451 0.010989 0.0474453" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" />
+    <geom name="cabinet__side_panel_front" size="0.00329671 0.00329671 0.07573" pos="0.249451 -0.123077 0.123175" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" />
+    <geom name="cabinet__side_panel_rear" size="0.00329671 0.00329671 0.07573" pos="0.249451 0.145055 0.123175" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" />
+    <geom name="cabinet__control_fascia" pos="0.201099 -0.199451 0.118613" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="control_fascia" />
+    <geom name="cabinet__front_door_seam" size="0.00164835 0.00065934 0.102646" pos="0.159341 -0.207692 0.118613" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.016 0.018 1" />
+    <geom name="cabinet__cavity_left_wall" size="0.00329671 0.15055 0.0770985" pos="-0.221978 -0.0032967 0.115876" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__cavity_right_wall" size="0.00329671 0.15055 0.0770985" pos="0.134066 -0.0032967 0.115876" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__cavity_rear_wall" size="0.178022 0.00329671 0.0770985" pos="-0.043956 0.150549 0.115876" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__cavity_top_wall" size="0.178022 0.15055 0.00273722" pos="-0.043956 -0.0032967 0.19708" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__cavity_bottom_wall" size="0.178022 0.15055 0.00273722" pos="-0.043956 -0.0032967 0.0333029" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__cavity_floor" size="0.153846 0.12967 0.00182482" pos="-0.043956 -0.021978 0.0377737" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.7 0.72 0.72 1" />
+    <geom name="cabinet__waveguide_cover" size="0.00137363 0.032967 0.0182482" pos="0.129396 0.0384615 0.125912" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.78 0.7 0.56 1" />
+    <geom name="cabinet__turntable_roller_ring" pos="-0.043956 -0.021978 0.0421533" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" mesh="turntable_roller_ring" />
+    <geom name="cabinet__turntable_glass_plate" size="0.114286 0.00182482" pos="-0.043956 -0.021978 0.0479015" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.72 0.86 0.92 0.45" />
+    <geom name="cabinet__foot_0" size="0.0197802 0.00547445" pos="-0.192308 -0.137363 -0.00547445" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.04 0.04 0.04 1" />
+    <geom name="cabinet__foot_1" size="0.0197802 0.00547445" pos="0.192308 -0.137363 -0.00547445" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.04 0.04 0.04 1" />
+    <geom name="cabinet__foot_2" size="0.0197802 0.00547445" pos="-0.192308 0.137363 -0.00547445" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.04 0.04 0.04 1" />
+    <geom name="cabinet__foot_3" size="0.0197802 0.00547445" pos="0.192308 0.137363 -0.00547445" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.04 0.04 0.04 1" />
+    <geom name="cabinet__receiver_slot_0" size="0.00934065 0.0021978 0.0082117" pos="0.167033 -0.205495 0.149635" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.016 0.018 1" />
+    <geom name="cabinet__receiver_slot_1" size="0.00934065 0.0021978 0.0082117" pos="0.167033 -0.205495 0.0866788" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.015 0.016 0.018 1" />
+    <geom name="cabinet__power_tick_0" size="0.00087912 0.00054945 0.00319343" pos="0.164249 -0.206319 0.146317" quat="0.537299 0 -0.843392 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_1" size="0.00087912 0.00054945 0.00228102" pos="0.161825 -0.206319 0.169321" quat="0.793352 0 -0.608763 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_2" size="0.00087912 0.00054945 0.00228102" pos="0.177778 -0.206319 0.188238" quat="0.953717 0 -0.300706 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_3" size="0.00087912 0.00054945 0.00319343" pos="0.201099 -0.206319 0.194343" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_4" size="0.00087912 0.00054945 0.00228102" pos="0.22442 -0.206319 0.188238" quat="0.953717 0 0.300706 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_5" size="0.00087912 0.00054945 0.00228102" pos="0.240373 -0.206319 0.169321" quat="0.793352 0 0.608763 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_tick_6" size="0.00087912 0.00054945 0.00319343" pos="0.237949 -0.206319 0.146317" quat="0.537299 0 0.843392 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_icon_dash" size="0.00329671 0.00054945 0.000684305" pos="0.175824 -0.206319 0.197993" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__power_icon_mark" size="0.000824175 0.00054945 0.00273722" pos="0.168132 -0.206319 0.193431" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_0" size="0.00076923 0.00054945 0.00273722" pos="0.181319 -0.206319 0.0637072" quat="0.258821 0 -0.965925 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_1" size="0.00076923 0.00054945 0.00182482" pos="0.166839 -0.206319 0.0757299" quat="0.499998 0 -0.866027 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_2" size="0.00076923 0.00054945 0.00273722" pos="0.161538 -0.206319 0.0921533" quat="0.707105 0 -0.707108 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_3" size="0.00076923 0.00054945 0.00182482" pos="0.166839 -0.206319 0.108577" quat="0.866025 0 -0.500001 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_4" size="0.00076923 0.00054945 0.00273722" pos="0.181319 -0.206319 0.120599" quat="0.965926 0 -0.258819 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_5" size="0.00076923 0.00054945 0.00182482" pos="0.201099 -0.206319 0.125" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_6" size="0.00076923 0.00054945 0.00273722" pos="0.220879 -0.206319 0.120599" quat="0.965926 0 0.258819 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_7" size="0.00076923 0.00054945 0.00182482" pos="0.235359 -0.206319 0.108577" quat="0.866025 0 0.500001 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_8" size="0.00076923 0.00054945 0.00273722" pos="0.240659 -0.206319 0.0921533" quat="0.707105 0 0.707108 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_9" size="0.00076923 0.00054945 0.00182482" pos="0.235359 -0.206319 0.0757299" quat="0.499998 0 0.866027 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_tick_10" size="0.00076923 0.00054945 0.00273722" pos="0.220879 -0.206319 0.0637072" quat="0.258821 0 0.965925 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_0" size="0.0021978 0.00054945 0.00091241" pos="0.17468 -0.206319 0.0702175" quat="0.382686 0 -0.923879 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_1" size="0.0021978 0.00054945 0.00091241" pos="0.163736 -0.206319 0.0921533" quat="0.707105 0 -0.707108 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_2" size="0.0021978 0.00054945 0.00091241" pos="0.17468 -0.206319 0.114089" quat="0.92388 0 -0.382683 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_3" size="0.0021978 0.00054945 0.00091241" pos="0.201099 -0.206319 0.123175" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_4" size="0.0021978 0.00054945 0.00091241" pos="0.227518 -0.206319 0.114089" quat="0.92388 0 0.382683 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_5" size="0.0021978 0.00054945 0.00091241" pos="0.238462 -0.206319 0.0921533" quat="0.707105 0 0.707108 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__timer_numeral_6" size="0.0021978 0.00054945 0.00091241" pos="0.227518 -0.206319 0.0702175" quat="0.382686 0 0.923879 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__button_guide_top" size="0.032967 0.00054945 0.00091241" pos="0.201099 -0.207143 0.0465328" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__button_guide_bottom" size="0.032967 0.00054945 0.00091241" pos="0.201099 -0.207143 0.0173358" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__button_guide_side_0" size="0.0010989 0.00054945 0.0145986" pos="0.167033 -0.207143 0.0319343" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom name="cabinet__button_guide_side_1" size="0.0010989 0.00054945 0.0145986" pos="0.235165 -0.207143 0.0319343" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.16 0.17 0.18 1" />
+    <geom pos="0 0 0.118613" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="rounded_outer_cabinet" group="3" />
+    <geom pos="-0.010989 0.00549451 0.237682" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="top_recess_panel" group="3" />
+    <geom size="0.203296 0.00164835 0.000547445" pos="-0.010989 -0.12967 0.2375" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.134615 0.00273722" pos="0.249451 0.010989 0.198905" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.134615 0.00273722" pos="0.249451 0.010989 0.0474453" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.00329671 0.07573" pos="0.249451 -0.123077 0.123175" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.00329671 0.07573" pos="0.249451 0.145055 0.123175" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="0.201099 -0.199451 0.118613" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="control_fascia" group="3" />
+    <geom size="0.00164835 0.00065934 0.102646" pos="0.159341 -0.207692 0.118613" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.15055 0.0770985" pos="-0.221978 -0.0032967 0.115876" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.15055 0.0770985" pos="0.134066 -0.0032967 0.115876" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.178022 0.00329671 0.0770985" pos="-0.043956 0.150549 0.115876" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.178022 0.15055 0.00273722" pos="-0.043956 -0.0032967 0.19708" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.178022 0.15055 0.00273722" pos="-0.043956 -0.0032967 0.0333029" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.153846 0.12967 0.00182482" pos="-0.043956 -0.021978 0.0377737" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00137363 0.032967 0.0182482" pos="0.129396 0.0384615 0.125912" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom pos="-0.043956 -0.021978 0.0421533" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="turntable_roller_ring" group="3" />
+    <geom size="0.114286 0.00182482" pos="-0.043956 -0.021978 0.0479015" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0197802 0.00547445" pos="-0.192308 -0.137363 -0.00547445" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0197802 0.00547445" pos="0.192308 -0.137363 -0.00547445" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0197802 0.00547445" pos="-0.192308 0.137363 -0.00547445" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0197802 0.00547445" pos="0.192308 0.137363 -0.00547445" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00934065 0.0021978 0.0082117" pos="0.167033 -0.205495 0.149635" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00934065 0.0021978 0.0082117" pos="0.167033 -0.205495 0.0866788" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00319343" pos="0.164249 -0.206319 0.146317" quat="0.537299 0 -0.843392 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00228102" pos="0.161825 -0.206319 0.169321" quat="0.793352 0 -0.608763 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00228102" pos="0.177778 -0.206319 0.188238" quat="0.953717 0 -0.300706 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00319343" pos="0.201099 -0.206319 0.194343" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00228102" pos="0.22442 -0.206319 0.188238" quat="0.953717 0 0.300706 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00228102" pos="0.240373 -0.206319 0.169321" quat="0.793352 0 0.608763 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00087912 0.00054945 0.00319343" pos="0.237949 -0.206319 0.146317" quat="0.537299 0 0.843392 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00329671 0.00054945 0.000684305" pos="0.175824 -0.206319 0.197993" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.000824175 0.00054945 0.00273722" pos="0.168132 -0.206319 0.193431" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.181319 -0.206319 0.0637072" quat="0.258821 0 -0.965925 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00182482" pos="0.166839 -0.206319 0.0757299" quat="0.499998 0 -0.866027 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.161538 -0.206319 0.0921533" quat="0.707105 0 -0.707108 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00182482" pos="0.166839 -0.206319 0.108577" quat="0.866025 0 -0.500001 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.181319 -0.206319 0.120599" quat="0.965926 0 -0.258819 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00182482" pos="0.201099 -0.206319 0.125" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.220879 -0.206319 0.120599" quat="0.965926 0 0.258819 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00182482" pos="0.235359 -0.206319 0.108577" quat="0.866025 0 0.500001 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.240659 -0.206319 0.0921533" quat="0.707105 0 0.707108 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00182482" pos="0.235359 -0.206319 0.0757299" quat="0.499998 0 0.866027 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.00076923 0.00054945 0.00273722" pos="0.220879 -0.206319 0.0637072" quat="0.258821 0 0.965925 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.17468 -0.206319 0.0702175" quat="0.382686 0 -0.923879 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.163736 -0.206319 0.0921533" quat="0.707105 0 -0.707108 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.17468 -0.206319 0.114089" quat="0.92388 0 -0.382683 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.201099 -0.206319 0.123175" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.227518 -0.206319 0.114089" quat="0.92388 0 0.382683 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.238462 -0.206319 0.0921533" quat="0.707105 0 0.707108 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0021978 0.00054945 0.00091241" pos="0.227518 -0.206319 0.0702175" quat="0.382686 0 0.923879 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.032967 0.00054945 0.00091241" pos="0.201099 -0.207143 0.0465328" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.032967 0.00054945 0.00091241" pos="0.201099 -0.207143 0.0173358" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0010989 0.00054945 0.0145986" pos="0.167033 -0.207143 0.0319343" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <geom size="0.0010989 0.00054945 0.0145986" pos="0.235165 -0.207143 0.0319343" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    <body name="door" pos="-0.236264 -0.209341 0.118613">
+      <joint name="cabinet_to_door" pos="0 0 0" axis="0 0 -1" range="0 1.74533" actuatorfrcrange="-142 142" damping="14.209" armature="0.1426" />
+      <geom name="door__door_frame" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="door_framed_slab" />
+      <geom name="door__door_window_frame" pos="0.197802 -0.0192308 0.00547445" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" mesh="door_window_frame" />
+      <geom name="door__latch_hook_0" size="0.0076923 0.0054945 0.00638685" pos="0.398901 -0.0043956 0.0310219" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" />
+      <geom name="door__latch_hook_1" size="0.0076923 0.0054945 0.00638685" pos="0.398901 -0.0043956 -0.0319343" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" />
+      <geom type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="door_framed_slab" group="3" />
+      <geom pos="0.197802 -0.0192308 0.00547445" quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="door_window_frame" group="3" />
+      <geom size="0.0076923 0.0054945 0.00638685" pos="0.398901 -0.0043956 0.0310219" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+      <geom size="0.0076923 0.0054945 0.00638685" pos="0.398901 -0.0043956 -0.0319343" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+    <body name="power_knob" pos="0.201099 -0.206593 0.160584">
+      <joint name="fascia_to_power_knob" pos="0 0 0" axis="0 -1 0" range="-2.35619 2.35619" actuatorfrcrange="-20 20" damping="0.500" armature="0.0020" />
+      <geom name="power_knob__power_knob_cap" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="microwave_knob_cap" />
+      <geom name="power_knob__power_shaft" size="0.00754241 0.0076923" pos="0 0.00769231 0" quat="0.707105 -0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" />
+      <geom quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="microwave_knob_cap" group="3" />
+      <geom size="0.00754241 0.0076923" pos="0 0.00769231 0" quat="0.707105 -0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+    <body name="timer_knob" pos="0.201099 -0.206593 0.0921533">
+      <joint name="fascia_to_timer_knob" pos="0 0 0" axis="0 -1 0" range="0 4.71239" actuatorfrcrange="-20 20" damping="0.500" armature="0.0020" />
+      <geom name="timer_knob__timer_knob_cap" quat="0.707105 0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="microwave_knob_cap" />
+      <geom name="timer_knob__timer_shaft" size="0.00754241 0.0076923" pos="0 0.00769231 0" quat="0.707105 -0.707108 0 0" type="cylinder" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" />
+      <geom quat="0.707105 0.707108 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="microwave_knob_cap" group="3" />
+      <geom size="0.00754241 0.0076923" pos="0 0.00769231 0" quat="0.707105 -0.707108 0 0" type="cylinder" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+    <body name="release_button" pos="0.201099 -0.206593 0.0319343">
+      <joint name="fascia_to_release_button" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.010989" actuatorfrcrange="-5 5" damping="0.400" armature="0.0020" />
+      <geom name="release_button__button_plate" pos="0 -0.0032967 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" rgba="0.96 0.96 0.93 1" mesh="release_button_plate" />
+      <geom name="release_button__button_slider" size="0.0164835 0.0065934 0.0082117" pos="0 0.00659341 0" type="box" contype="0" conaffinity="0" group="0" density="0" rgba="0.9 0.91 0.89 1" />
+      <geom pos="0 -0.0032967 0" quat="1 0 0 0" type="mesh" rgba="0.5 0.5 0.5 0.3" mesh="release_button_plate" group="3" />
+      <geom size="0.0164835 0.0065934 0.0082117" pos="0 0.00659341 0" type="box" rgba="0.5 0.5 0.5 0.3" group="3" />
+    </body>
+  </body></worldbody>
+  <actuator>
+    <position name="cabinet_to_door_ctrl" joint="cabinet_to_door" kp="3552" ctrlrange="0 1.74533" forcerange="-142 142" />
+    <position name="fascia_to_power_knob_ctrl" joint="fascia_to_power_knob" kp="200" ctrlrange="-2.35619 2.35619" forcerange="-20 20" />
+    <position name="fascia_to_timer_knob_ctrl" joint="fascia_to_timer_knob" kp="200" ctrlrange="0 4.71239" forcerange="-20 20" />
+    <position name="fascia_to_release_button_ctrl" joint="fascia_to_release_button" kp="200" ctrlrange="0 0.010989" forcerange="-5 5" />
+  </actuator>
+  <contact>
+    <exclude body1="door" body2="power_knob" />
+    <exclude body1="door" body2="release_button" />
+    <exclude body1="door" body2="timer_knob" />
+    <exclude body1="door" body2="world" />
+    <exclude body1="power_knob" body2="release_button" />
+    <exclude body1="power_knob" body2="timer_knob" />
+    <exclude body1="power_knob" body2="world" />
+    <exclude body1="release_button" body2="timer_knob" />
+    <exclude body1="release_button" body2="world" />
+    <exclude body1="timer_knob" body2="world" />
+  </contact>
+</mujoco>

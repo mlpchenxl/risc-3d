@@ -1,0 +1,8 @@
+{
+  "name": "office_chair_1",
+  "mass_kg": 12.0,
+  "hulls": 67,
+  "friction": 0.6,
+  "faces_in": 290788,
+  "faces_out": 87236
+}

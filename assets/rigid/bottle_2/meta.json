@@ -1,0 +1,8 @@
+{
+  "name": "bottle_2",
+  "mass_kg": 0.45,
+  "hulls": 1,
+  "friction": 0.6,
+  "faces_in": 379352,
+  "faces_out": 113805
+}

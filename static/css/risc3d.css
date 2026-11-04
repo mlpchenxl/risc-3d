@@ -1,0 +1,1019 @@
+/* RISC-3D page components.
+ *
+ * Kept separate from the template's index.css so the upstream file stays
+ * byte-identical and can be re-pulled without a merge.
+ */
+
+:root {
+  --risc-ink: #0b1013;
+  --risc-cyan: #2aa6c9;
+  --risc-amber: #d79b00;
+  --risc-green: #4d9d4d;
+}
+
+/* ── DualCraft-style top header & full-viewport hero cover ─────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  min-height: 86px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-bottom: 1px solid #dde3df;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.wordmark {
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1.2px;
+  color: #202c2b;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.wordmark:hover {
+  color: #24736b;
+}
+
+.site-header .dot {
+  color: inherit;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  min-width: 0;
+}
+
+.header-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: #48515b;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.header-nav a:hover,
+.header-nav a.is-active {
+  color: #bf3430;
+}
+
+.hero.risc-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100svh - 86px);
+  overflow: hidden;
+  background: #191d1c;
+  color: #fff;
+  text-align: center;
+  padding: 64px 32px;
+}
+
+.hero.risc-hero .hero-background,
+.hero.risc-hero .hero-scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero.risc-hero .hero-background {
+  z-index: -2;
+  object-fit: cover;
+  border-radius: 0;
+  background: #191d1c;
+}
+
+.hero.risc-hero .hero-scrim {
+  z-index: -1;
+  background: linear-gradient(#0008, #000a);
+}
+
+.hero.risc-hero .hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero.risc-hero h1 {
+  width: 100%;
+  color: #f34b3f;
+  font-size: clamp(64px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.hero.risc-hero .hero-subtitle {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto 46px;
+  color: #fff;
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 700;
+  line-height: 1.42;
+  letter-spacing: 0;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 2px 18px #0004;
+}
+
+.hero.risc-hero .hero-subtitle > span {
+  display: block;
+}
+
+.hero.risc-hero .resources {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1080px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero.risc-hero .resources :is(button, a) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 54px;
+  font-family: inherit;
+  font-weight: 500;
+  color: #fff;
+  background: #ffffff22;
+  border: 1px solid #ffffff70;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.hero.risc-hero .resources a:hover {
+  background: #ffffff36;
+  border-color: #ffffffb0;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.hero.risc-hero .resources button:disabled {
+  cursor: default;
+  opacity: 0.92;
+}
+
+.hero.risc-hero .resources :is(button, a) .resource-status {
+  margin: 0;
+  color: #ffffffd9;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.hero.risc-hero .resources svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .header-nav {
+    width: 100%;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .header-nav a {
+    font-size: 16px;
+  }
+  .hero.risc-hero .resources {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hero.risc-hero {
+    min-height: calc(100svh - 86px);
+    padding: 48px 20px;
+  }
+  .hero.risc-hero h1 {
+    font-size: clamp(58px, 15vw, 80px);
+    margin-bottom: 28px;
+  }
+  .hero.risc-hero .hero-subtitle {
+    font-size: clamp(25px, 5.5vw, 34px);
+    margin-bottom: 32px;
+  }
+  .hero.risc-hero .resources {
+    gap: 10px;
+  }
+  .hero.risc-hero .resources :is(button, a) {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    min-height: 64px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+  .hero.risc-hero .resources .resource-status {
+    flex-basis: 100%;
+    font-size: 11px;
+  }
+}
+
+/* ── sticky section nav ─────────────────────────────────────────────────── */
+.risc-nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.risc-nav ul {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  list-style: none;
+}
+
+.risc-nav a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.risc-nav a:hover {
+  color: var(--primary-color);
+}
+
+/* ── media cards ────────────────────────────────────────────────────────── */
+.risc-card {
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.risc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.risc-card video,
+.risc-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--risc-ink);
+}
+
+.risc-cap {
+  padding: 0.9rem 1.1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.risc-cap b {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.risc-cap span {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+/* A caption bolted onto a viewer/slider that is not itself a .risc-card. */
+.risc-cap-attached {
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+.risc-card.is-clickable {
+  cursor: zoom-in;
+}
+
+/* ── results grid ───────────────────────────────────────────────────────── */
+/* Two per row, not auto-fill: at three across the arm and the object it is
+   working on are both too small to read. */
+.risc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+  .risc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── two-up: real capture beside the rebuilt simulation ─────────────────── */
+.risc-twoup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.risc-twoup > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.risc-twoup .risc-cap-attached {
+  flex: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .risc-twoup {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── interactive viewer panels ──────────────────────────────────────────── */
+.risc-viewer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--risc-ink);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.risc-viewer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Placeholder shown until a viewer is wired up. */
+.risc-viewer-stub {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #7f9aa5;
+  text-align: center;
+  padding: 2rem;
+  background:
+    repeating-linear-gradient(45deg, #0d1418 0 12px, #101a1f 12px 24px);
+}
+
+.risc-viewer-stub .i {
+  font-size: 2.2rem;
+  opacity: 0.55;
+}
+
+.risc-viewer-stub b {
+  color: #cfe6ee;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.risc-viewer-cta {
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.3rem;
+  border: 1px solid #2f6f85;
+  border-radius: var(--border-radius);
+  background: #12313c;
+  color: #d6f0f9;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.risc-viewer-cta:hover:not(:disabled) {
+  background: #1a4657;
+  border-color: #4f9fba;
+  transform: translateY(-1px);
+}
+
+.risc-viewer-cta:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.risc-viewer-stub small {
+  font-size: 0.76rem;
+  opacity: 0.6;
+}
+
+.risc-viewer-err {
+  color: #ff9a9a;
+  max-width: 34ch;
+}
+
+/* Transport bar, added once the engine is live. */
+.risc-viewer-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  background: linear-gradient(transparent, rgba(4, 9, 12, 0.85) 45%);
+  pointer-events: none;
+}
+
+.risc-viewer-btn {
+  pointer-events: auto;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(10, 20, 25, 0.72);
+  color: #dceef5;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.risc-viewer-btn:hover {
+  background: rgba(25, 55, 68, 0.9);
+}
+
+.risc-viewer-stats {
+  margin-left: auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #8fb3c0;
+  font-family: var(--mono, 'SF Mono', Monaco, 'Roboto Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+/* Asset picker under the simulation panel. */
+.mjcf-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.7rem 0.85rem 0;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+}
+
+.mjcf-chip {
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mjcf-chip:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.mjcf-chip.is-active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #fff;
+}
+
+.mjcf-chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.risc-viewer-stub code {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #9fd6e6 !important;
+  font-size: 0.8rem !important;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+/* Marks a block whose content is still a placeholder. */
+.risc-todo {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #fff4e5;
+  border: 1px solid #ffd8a8;
+  color: #b26a00;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* ── before/after slider ────────────────────────────────────────────────── */
+.risc-slider {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  box-shadow: var(--shadow-md);
+  user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+  background: var(--risc-ink);
+}
+
+.risc-slider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* The wipe is a clip-path on a full-size copy, not a width-clipped box holding
+   an oversized image. Both layers are then laid out identically by the same
+   rules, so the halves cannot drift out of register at any container width. */
+.risc-slider .after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50% 0 0);
+}
+
+.risc-slider .after img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.risc-slider .handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.risc-slider .handle::after {
+  content: '⟺';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.risc-slider .tag-l,
+.risc-slider .tag-r {
+  position: absolute;
+  top: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.risc-slider .tag-l { left: 0.75rem; }
+.risc-slider .tag-r { right: 0.75rem; }
+
+/* ── lightbox ───────────────────────────────────────────────────────────── */
+.risc-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(6, 10, 12, 0.93);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 3vw;
+}
+
+.risc-lightbox.open {
+  display: flex;
+}
+
+.risc-lightbox video {
+  max-width: 100%;
+  max-height: 94vh;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+}
+
+.risc-lightbox .close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.risc-lightbox .close:hover {
+  opacity: 1;
+}
+
+/* Section titles here are left-aligned inside cards, so kill the centred
+   underline the template puts on every .title.is-3. */
+.risc-card .title.is-3::after {
+  display: none;
+}
+
+/* ── asset gallery ──────────────────────────────────────────────────────── */
+.gal {
+  max-width: 1000px;
+  margin: 0 auto;
+  outline: none;
+}
+
+.gal-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.gal-tab {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gal-tab:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+.gal-tab.is-active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #fff;
+}
+
+.gal-blurb {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0 auto 1.5rem;
+  max-width: 620px;
+  min-height: 2.6em;
+}
+
+/* The stage keeps a fixed aspect so switching assets never reflows the page. */
+.gal-frame { position: relative; }
+
+.gal-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #1b2227;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gal-stage canvas { display: block; width: 100%; height: 100%; }
+
+.gal-stage.is-busy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 34, 39, 0.55);
+}
+
+.gal-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #1b2227;
+}
+
+.gal-start { position: relative; z-index: 1; }
+
+.gal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.gal-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.06); }
+.gal-arrow.is-prev { left: -22px; }
+.gal-arrow.is-next { right: -22px; }
+
+@media screen and (max-width: 1080px) {
+  .gal-arrow.is-prev { left: 8px; }
+  .gal-arrow.is-next { right: 8px; }
+}
+
+.gal-modes[hidden] {
+  /* `display: flex` below wins over the hidden attribute unless it is said
+     again here, which put an Appearance/Collision toggle on tabs that have
+     neither. */
+  display: none;
+}
+
+.gal-modes {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.gal-mode {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(10, 20, 25, 0.72);
+  color: #dceef5;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gal-mode:hover { background: rgba(25, 55, 68, 0.9); }
+.gal-mode.is-active { background: #fff; color: #16202a; border-color: #fff; }
+
+.gal-caption {
+  text-align: center;
+  margin-top: 1.1rem;
+}
+
+.gal-caption b {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.gal-facts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  min-height: 1.9em;
+}
+
+.gal-fact {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--background-accent);
+  color: var(--text-secondary);
+  font-family: var(--mono, 'SF Mono', Monaco, 'Roboto Mono', monospace);
+  font-size: 0.76rem;
+}
+
+.gal-dots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.gal-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gal-dot:hover { background: var(--text-light); }
+.gal-dot.is-active { background: var(--text-primary); transform: scale(1.35); }
+
+/* ── 3D split-wipe comparison viewer (#cmp-viewer) ─────────────────────── */
+#cmp-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+#cmp-viewer > .risc-viewer-cta {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.85rem 1.5rem;
+}
+
+#cmp-viewer .cta-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#cmp-viewer .cta-sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.82;
+}
+
+.cmp-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.risc-viewer .tag-l,
+.risc-viewer .tag-r {
+  position: absolute;
+  top: 0.75rem;
+  z-index: 5;
+  padding: 0.22rem 0.65rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.risc-viewer .tag-l { left: 0.75rem; }
+.risc-viewer .tag-r { right: 0.75rem; }
+
+.cmp-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  margin-left: -12px;
+  z-index: 6;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.cmp-divider .cmp-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.cmp-divider .cmp-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+}
+
+.cmp-modes {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  z-index: 6;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cmp-mode {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(10, 20, 25, 0.72);
+  color: #dceef5;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cmp-mode:hover { background: rgba(25, 55, 68, 0.9); }
+.cmp-mode.is-active { background: #fff; color: #16202a; border-color: #fff; }
+
