@@ -262,10 +262,17 @@
 <!-- ═══ results ═════════════════════════════════════════════════════════ -->
 <section class="section" id="results" style="background:var(--background-secondary);">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3 has-text-centered">Robot manipulation</h2>
+    <h2 class="title is-3 has-text-centered">Downstream Tasks &middot; Robot Manipulation</h2>
     <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2.5rem;">
       <p style="color:var(--text-secondary);">
-        Closed-loop mobile manipulation and articulated object interaction in the reconstructed simulation environments.
+        Reconstructed RISC-3D environments directly power closed-loop policy learning in simulation and zero-shot deployment in the real world.
+      </p>
+    </div>
+
+    <h3 class="title is-4 has-text-centered" style="margin-top:1.5rem;">Simulation Experiments</h3>
+    <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2rem;">
+      <p class="risc-section-sub has-text-centered" style="color:var(--text-secondary);">
+        Closed-loop mobile manipulation and articulated object interaction in Isaac Sim.
       </p>
     </div>
 
@@ -328,10 +335,10 @@
       </div>
     </div>
 
-    <h3 class="title is-4 has-text-centered" style="margin-top:3rem;">Sim-to-real transfer</h3>
+    <h3 class="title is-4 has-text-centered" style="margin-top:3rem;">Sim-to-Real Experiments</h3>
     <div class="content has-text-centered" style="max-width:780px;margin:0 auto 2rem;">
       <p class="risc-section-sub has-text-centered" style="color:var(--text-secondary);">
-        Zero-shot deployment of policies trained in the reconstructed RISC-3D simulation onto the physical robot.
+        Zero-shot deployment of policies trained in the reconstructed simulation onto the physical robot.
       </p>
     </div>
 
@@ -340,14 +347,14 @@
         <video poster="static/images/posters/sim2real_airfryer.jpg" muted loop playsinline
                controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/sim2real_airfryer.mp4"></video>
-        <div class="risc-cap"><b>Air fryer &middot; drawer opening</b><span>real-world articulated transfer &middot; 13 s</span></div>
+        <div class="risc-cap"><b>Air fryer &middot; Drawer opening</b><span>real-world articulated transfer &middot; 13 s</span></div>
       </div>
 
       <div class="risc-card is-clickable" data-full="static/videos/sim2real_transfer.mp4">
         <video poster="static/images/posters/sim2real_transfer.jpg" muted loop playsinline
                controlslist="nodownload noplaybackrate" disablepictureinpicture disableremoteplayback oncontextmenu="return false;"
                preload="none" data-lazy data-src="static/videos/sim2real_transfer.mp4"></video>
-        <div class="risc-cap"><b>Rigid object &middot; transfer</b><span>real-world countertop-to-sink &middot; 10 s</span></div>
+        <div class="risc-cap"><b>Rigid object &middot; Transfer</b><span>real-world countertop-to-sink &middot; 10 s</span></div>
       </div>
     </div>
   </div>
